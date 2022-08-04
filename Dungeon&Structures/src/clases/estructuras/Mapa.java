@@ -20,7 +20,7 @@ public class Mapa {
         return grafo.insertarArco(origen, destino, distancia);
     }
     
-    //
+    // Funcion para conseguir una locacion aleatoria del mapa, servira para la formacion de equipos
     public String obtenerLocacionAleatoria(){
         
         String resultado;
