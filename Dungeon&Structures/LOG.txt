@@ -1,0 +1,148 @@
+
+
+-------------------------------------
+
+Estado del sistema luego de la carga inicial:
+
+-------------------------------------
+
+Items en la tienda 
+
+-------------------------------------
+
+
+Item espada tripolar, Precio: 1000, Copias: 598 --> Item Pistola tripolar, Precio: 100, Copias: 19 , Item arco tripolar, Precio: 21331, Copias: 0
+Item Pistola tripolar, Precio: 100, Copias: 19 --> Item sable tripolar, Precio: 60, Copias: 29 , Item TRIneo POLARizado, Precio: 180, Copias: 52
+Item arco tripolar, Precio: 21331, Copias: 0 -->  , 
+Item sable tripolar, Precio: 60, Copias: 29 -->  , 
+Item TRIneo POLARizado, Precio: 180, Copias: 52 -->  , 
+
+--------------------------------------------------------------------------
+
+
+Jugadores: 
+
+-------------------------------------
+
+
+ {Nostradamus, (Nostradamus: Defensor, Profesional, $80000, Items: [sable tripolar, Pistola tripolar], Salud: 100, Derrotas: 0, Victorias: 0)} --> {Faker, (Faker: Guerrero, Aficionado, $50000, Items: [TRIneo POLARizado, espada tripolar], Salud: 100, Derrotas: 0, Victorias: 0)} , {Roberto, (Roberto: Guerrero, Profesional, $25, Items: [TRIneo POLARizado], Salud: 100, Derrotas: 0, Victorias: 0)}
+ {Faker, (Faker: Guerrero, Aficionado, $50000, Items: [TRIneo POLARizado, espada tripolar], Salud: 100, Derrotas: 0, Victorias: 0)} -->  , {Insec, (Insec: Guerrero, Aficionado, $25000, Items: [TRIneo POLARizado, arco tripolar], Salud: 100, Derrotas: 0, Victorias: 0)}
+ {Roberto, (Roberto: Guerrero, Profesional, $25, Items: [TRIneo POLARizado], Salud: 100, Derrotas: 0, Victorias: 0)} --> {Pablo, (Pablo: Defensor, Novato, $25, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} , {Triline, (Triline: Guerrero, Novato, $1500, Items: [espada tripolar], Salud: 100, Derrotas: 0, Victorias: 0)}
+ {Insec, (Insec: Guerrero, Aficionado, $25000, Items: [TRIneo POLARizado, arco tripolar], Salud: 100, Derrotas: 0, Victorias: 0)} -->  , 
+ {Pablo, (Pablo: Defensor, Novato, $25, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} -->  , {Papa Noel, (Papa Noel: Defensor, Aficionado, $0, Items: [TRIneo POLARizado, TRIneo POLARizado, TRIneo POLARizado, TRIneo POLARizado, TRIneo POLARizado], Salud: 100, Derrotas: 0, Victorias: 0)}
+ {Triline, (Triline: Guerrero, Novato, $1500, Items: [espada tripolar], Salud: 100, Derrotas: 0, Victorias: 0)} -->  , 
+ {Papa Noel, (Papa Noel: Defensor, Aficionado, $0, Items: [TRIneo POLARizado, TRIneo POLARizado, TRIneo POLARizado, TRIneo POLARizado, TRIneo POLARizado], Salud: 100, Derrotas: 0, Victorias: 0)} -->  , 
+
+--------------------------------------------------------------------------
+
+
+ Mapa: 
+
+-------------------------------------
+
+Formato de grafo. <elementoVertice> : {<destinoArco>, <etiquetaArco>} -  ... 
+
+ Montania:  { Pantano, 15 } - { Bosque, 15 } -
+ Muelle:  { Bosque, 20 } - { Llanura, 25 } -
+ Isla:  { Lago, 30 } - { Pantano, 50 } -
+ Llanura:  { Muelle, 25 } - { Lago, 5 } -
+ Lago:  { Llanura, 5 } - { Isla, 30 } -
+ Rio:  { Pantano, 10 } -
+ Pantano:  { Montania, 15 } - { Isla, 50 } - { Rio, 10 } -
+ Bosque:  { Muelle, 20 } - { Montania, 15 } -
+
+--------------------------------------------------------------------------
+
+
+ Cola de espera: 
+
+-------------------------------------
+
+Cola de prioridad vacia
+
+--------------------------------------------------------------------------
+
+
+ Equipos: 
+
+-------------------------------------
+
+Diccionario vacio
+
+--------------------------------------------------------------------------
+
+
+
+
+-------------------------------------
+
+Estado del sistema luego al finalizar la ejecucion:
+
+-------------------------------------
+
+Items en la tienda 
+
+-------------------------------------
+
+
+Item espada tripolar, Precio: 1000, Copias: 598 --> Item Pistola tripolar, Precio: 100, Copias: 19 , Item arco tripolar, Precio: 21331, Copias: 0
+Item Pistola tripolar, Precio: 100, Copias: 19 --> Item sable tripolar, Precio: 60, Copias: 29 , Item TRIneo POLARizado, Precio: 180, Copias: 52
+Item arco tripolar, Precio: 21331, Copias: 0 -->  , 
+Item sable tripolar, Precio: 60, Copias: 29 -->  , 
+Item TRIneo POLARizado, Precio: 180, Copias: 52 -->  , 
+
+--------------------------------------------------------------------------
+
+
+Jugadores: 
+
+-------------------------------------
+
+
+ {Nostradamus, (Nostradamus: Defensor, Profesional, $80000, Items: [sable tripolar, Pistola tripolar], Salud: 100, Derrotas: 0, Victorias: 0)} --> {Faker, (Faker: Guerrero, Aficionado, $50000, Items: [TRIneo POLARizado, espada tripolar], Salud: 100, Derrotas: 0, Victorias: 0)} , {Roberto, (Roberto: Guerrero, Profesional, $25, Items: [TRIneo POLARizado], Salud: 100, Derrotas: 0, Victorias: 0)}
+ {Faker, (Faker: Guerrero, Aficionado, $50000, Items: [TRIneo POLARizado, espada tripolar], Salud: 100, Derrotas: 0, Victorias: 0)} -->  , {Insec, (Insec: Guerrero, Aficionado, $25000, Items: [TRIneo POLARizado, arco tripolar], Salud: 100, Derrotas: 0, Victorias: 0)}
+ {Roberto, (Roberto: Guerrero, Profesional, $25, Items: [TRIneo POLARizado], Salud: 100, Derrotas: 0, Victorias: 0)} --> {Pablo, (Pablo: Defensor, Novato, $25, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} , {Triline, (Triline: Guerrero, Novato, $1500, Items: [espada tripolar], Salud: 100, Derrotas: 0, Victorias: 0)}
+ {Insec, (Insec: Guerrero, Aficionado, $25000, Items: [TRIneo POLARizado, arco tripolar], Salud: 100, Derrotas: 0, Victorias: 0)} -->  , 
+ {Pablo, (Pablo: Defensor, Novato, $25, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} -->  , {Papa Noel, (Papa Noel: Defensor, Aficionado, $0, Items: [TRIneo POLARizado, TRIneo POLARizado, TRIneo POLARizado, TRIneo POLARizado, TRIneo POLARizado], Salud: 100, Derrotas: 0, Victorias: 0)}
+ {Triline, (Triline: Guerrero, Novato, $1500, Items: [espada tripolar], Salud: 100, Derrotas: 0, Victorias: 0)} -->  , 
+ {Papa Noel, (Papa Noel: Defensor, Aficionado, $0, Items: [TRIneo POLARizado, TRIneo POLARizado, TRIneo POLARizado, TRIneo POLARizado, TRIneo POLARizado], Salud: 100, Derrotas: 0, Victorias: 0)} -->  , 
+
+--------------------------------------------------------------------------
+
+
+ Mapa: 
+
+-------------------------------------
+
+Formato de grafo. <elementoVertice> : {<destinoArco>, <etiquetaArco>} -  ... 
+
+ Montania:  { Pantano, 15 } - { Bosque, 15 } -
+ Muelle:  { Bosque, 20 } - { Llanura, 25 } -
+ Isla:  { Lago, 30 } - { Pantano, 50 } -
+ Llanura:  { Muelle, 25 } - { Lago, 5 } -
+ Lago:  { Llanura, 5 } - { Isla, 30 } -
+ Rio:  { Pantano, 10 } -
+ Pantano:  { Montania, 15 } - { Isla, 50 } - { Rio, 10 } -
+ Bosque:  { Muelle, 20 } - { Montania, 15 } -
+
+--------------------------------------------------------------------------
+
+
+ Cola de espera: 
+
+-------------------------------------
+
+Cola de prioridad vacia
+
+--------------------------------------------------------------------------
+
+
+ Equipos: 
+
+-------------------------------------
+
+Diccionario vacio
+
+--------------------------------------------------------------------------
+
+

@@ -1,0 +1,8 @@
+L: Bosque
+L: Pantano
+L: Rio
+L: Lago
+L: Llanura
+L: Isla
+L: Muelle
+L: Montania

@@ -1,0 +1,7 @@
+J: Faker; guerrero; aficionado; 50000; <E001, M001>
+J: Nostradamus; defensor; profesional; 80000; <R002, E002>
+J: Triline; guerrero; novato; 1500; <E001>
+J: Insec; guerrero; aficionado; 25000; <R001, M001>
+J: Pablo; defensor; novato; 25; <R001>
+J: Roberto; guerrero; profesional; 25; <M001>
+J: Papa Noel; defensor; aficionado; 0; <M001, M001, M001, M001, M001>
