@@ -1,5 +1,20 @@
-I: E001; espada tripolar; 1000; 20; 10; 600
-I: R001; arco tripolar; 21331; 50; 30; 1
-I: R002; Pistola tripolar; 100; 20; 50; 20
-I: E002; sable tripolar; 60; 20; 60; 30
-I: M001; TRIneo POLARizado; 180; 70; 60; 60
+I: E001; ballesta resplandeciente del desierto; 260; 40; 25; 97
+I: E002; maza runica del bosque; 165; 35; 20; 28
+I: E003; espada legendaria de las profunidades; 160; 30; 10; 22
+I: E004; ballesta espectral del bosque; 120; 30; 10; 13
+I: E005; hacha legendaria elfica; 195; 25; 40; 21
+I: E006; arco plateada enana; 300; 30; 45; 95
+I: E007; ballesta bipolar de la tormenta; 160; 10; 30; 88
+I: E008; hacha espectral del desierto; 165; 10; 45; 50
+I: E009; espada plateada enana; 180; 15; 45; 31
+I: E010; casco runica del bosque; 80; 15; 5; 93
+I: E011; casco oscura elfica; 120; 10; 30; 5
+I: E012; ballesta legendaria enana; 90; 10; 20; 66
+I: E013; escudo bipolar enana; 220; 15; 40; 4
+I: E014; hacha plateada de la tormenta; 220; 45; 10; 37
+I: E015; casco resplandeciente elfica; 240; 45; 15; 72
+I: E016; escudo bipolar elfica; 240; 20; 40; 29
+I: E017; espada oscura destructora; 220; 45; 10; 39
+I: E018; maza espectral de las profunidades; 150; 20; 30; 81
+I: E019; hacha runica enana; 60; 10; 10; 3
+I: E020; arco resplandeciente destructora; 270; 45; 45; 32

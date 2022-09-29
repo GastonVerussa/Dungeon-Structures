@@ -162,6 +162,10 @@ public class Mapa {
         return (int) grafo.recuperarEtiqueta(origen, destino);
     }
     
+    public Lista recuperarLocaciones(){
+        return grafo.listarEnAnchura();
+    }
+    
     //  Los caminos vienen en una lista en el formato { origen, etiqueta, vertice, etiqueta, ...., destino}
     //  Esta funcion logra modificarlos, sabiendo que las etiquetas son enteros, a una lista del formato
     //      { distanciaTotal, origen, vertice, vertice, ..., destino }

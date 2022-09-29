@@ -108,7 +108,7 @@ public class Item implements Comparable<Item>{
         
         String resultado;
         
-        resultado = "Item " + nombre;
+        resultado = "Item " + codigo;
         resultado += ", Precio: " + precio;
         resultado += ", Copias: " + cantCopiasDisp;
         

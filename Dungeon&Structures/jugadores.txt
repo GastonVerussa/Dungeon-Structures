@@ -1,7 +1,60 @@
-J: Faker; guerrero; aficionado; 50000; <E001, M001>
-J: Nostradamus; defensor; profesional; 80000; <R002, E002>
-J: Triline; guerrero; novato; 1500; <E001>
-J: Insec; guerrero; aficionado; 25000; <R001, M001>
-J: Pablo; defensor; novato; 25; <R001>
-J: Roberto; guerrero; profesional; 25; <M001>
-J: Papa Noel; defensor; aficionado; 0; <M001, M001, M001, M001, M001>
+J: Nehnid, el hechicero cobarde; Guerrero; Aficionado; 100; <>
+J: Buo, el gladiador heroico; Guerrero; Aficionado; 150; <E002>
+J: Nucrol, el barbaro heroico; Defensor; Aficionado; 1450; <>
+J: Eised, el picaro despiadado; Defensor; Aficionado; 1950; <>
+J: Stam, el mago experto; Guerrero; Profesional; 550; <E020, E012, E002>
+J: Stam, el picaro despiadado; Guerrero; Novato; 100; <>
+J: Bragrem, el hechicero noble; Guerrero; Profesional; 1450; <E016>
+J: Nehnid, el hechicero noble; Defensor; Aficionado; 850; <>
+J: Chiang, el hechicero cobarde; Guerrero; Aficionado; 800; <E012, E010, E009>
+J: Stam, el hechicero experto; Defensor; Profesional; 1150; <E014, E003>
+J: Bragrem, el gladiador experto; Defensor; Profesional; 200; <E011, E016, E016>
+J: Eised, el barbaro heroico; Guerrero; Aficionado; 1050; <>
+J: Chiang, el mago heroico; Guerrero; Profesional; 1700; <E004, E006>
+J: Olban, el barbaro novato; Defensor; Aficionado; 1450; <E011, E013, E006, E002>
+J: Gler, el gladiador despiadado; Defensor; Aficionado; 550; <E002, E015>
+J: Chiang, el mago despiadado; Defensor; Aficionado; 900; <E007>
+J: Nehnid, el explorador despiadado; Guerrero; Aficionado; 800; <>
+J: Eised, el picaro noble; Defensor; Aficionado; 550; <E007, E006, E016, E020>
+J: Olban, el espadachin experto; Defensor; Profesional; 0; <E004, E020>
+J: Nucrol, el espadachin noble; Guerrero; Profesional; 850; <E015, E013, E014>
+J: Bragrem, el mago novato; Defensor; Novato; 900; <E012, E009>
+J: Nucrol, el espadachin experto; Defensor; Novato; 1500; <E014, E012>
+J: Stam, el explorador novato; Guerrero; Novato; 750; <E016, E015>
+J: Bragrem, el barbaro cobarde; Guerrero; Aficionado; 1450; <E005, E007, E014, E013>
+J: Stam, el gladiador novato; Guerrero; Profesional; 1550; <E013, E006>
+J: Bragrem, el espadachin experto; Guerrero; Aficionado; 1000; <>
+J: Nehnid, el picaro novato; Guerrero; Aficionado; 500; <E010, E007, E019, E012>
+J: Stam, el estratega cobarde; Guerrero; Novato; 1050; <E009>
+J: Nucrol, el hechicero noble; Guerrero; Aficionado; 350; <>
+J: Buo, el gladiador experto; Defensor; Aficionado; 1350; <E020>
+J: Chiang, el espadachin despiadado; Defensor; Aficionado; 1700; <E020, E004>
+J: Gler, el barbaro heroico; Guerrero; Profesional; 150; <E013, E006>
+J: Buo, el hechicero valiente; Defensor; Profesional; 800; <E006>
+J: Stam, el explorador cobarde; Guerrero; Novato; 150; <E016, E010>
+J: Chiang, el espadachin heroico; Guerrero; Novato; 1800; <E020>
+J: Nucrol, el estratega despiadado; Defensor; Novato; 700; <E003, E020>
+J: Stam, el picaro noble; Guerrero; Aficionado; 400; <E016, E019>
+J: Bragrem, el gladiador despiadado; Guerrero; Aficionado; 750; <E011>
+J: Gler, el hechicero valiente; Defensor; Aficionado; 150; <E002, E008, E020>
+J: Buo, el mago despiadado; Defensor; Aficionado; 1800; <E017, E008, E013, E002>
+J: Bragrem, el explorador experto; Guerrero; Profesional; 300; <>
+J: Buo, el espadachin experto; Defensor; Aficionado; 350; <E003>
+J: Eised, el gladiador despiadado; Guerrero; Novato; 300; <E011>
+J: Eised, el picaro experto; Defensor; Profesional; 450; <>
+J: Gler, el espadachin cobarde; Guerrero; Novato; 1600; <E003, E017>
+J: Buo, el picaro valiente; Guerrero; Novato; 1200; <E005, E011, E017>
+J: Nehnid, el estratega experto; Defensor; Profesional; 300; <>
+J: Bragrem, el espadachin heroico; Guerrero; Aficionado; 1950; <E013>
+J: Bragrem, el hechicero novato; Defensor; Aficionado; 1300; <E020>
+J: Chiang, el estratega experto; Defensor; Aficionado; 1700; <E007, E003>
+J: Chiang, el picaro heroico; Defensor; Aficionado; 1300; <>
+J: Nucrol, el picaro noble; Guerrero; Profesional; 150; <>
+J: Gler, el picaro valiente; Guerrero; Novato; 1300; <E012, E015>
+J: Olban, el espadachin valiente; Guerrero; Aficionado; 1750; <E019, E012, E020>
+J: Olban, el mago cobarde; Guerrero; Novato; 1550; <E016, E007, E008, E006>
+J: Buo, el picaro despiadado; Guerrero; Aficionado; 150; <E019, E010, E012>
+J: Bragrem, el explorador valiente; Defensor; Aficionado; 1600; <E002, E007>
+J: Buo, el espadachin novato; Defensor; Profesional; 500; <>
+J: Stam, el explorador noble; Guerrero; Aficionado; 1400; <E003, E020>
+J: Gler, el explorador noble; Guerrero; Profesional; 750; <>
