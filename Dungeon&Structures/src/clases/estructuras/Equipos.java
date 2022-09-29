@@ -1,6 +1,7 @@
 package clases.estructuras;
 
 import clases.unidades.Equipo;
+import lineales.dinamicas.Lista;
 import propositoEspecifico.DiccionarioHash;
 
 public class Equipos {
@@ -26,6 +27,11 @@ public class Equipos {
     public boolean existe(String nombre){
         return tablaEquipos.existeClave(nombre);
     }
+    
+    public Lista recuperarEquipos(){
+        return tablaEquipos.listarDatos();
+    }
+    
     /*
     public boolean estaEnEquipo(String nombre){
     

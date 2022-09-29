@@ -6,3 +6,8 @@ C: Lago; Llanura; 5
 C: Llanura; Muelle; 25
 C: Muelle; Bosque; 20
 C: Pantano; Montania; 15
+C: Muelle; Lago; 40
+C: Rio; Lago; 25
+C: Isla; Bosque; 45
+C: Montania; Llanura; 55
+C: Bosque; Rio; 20

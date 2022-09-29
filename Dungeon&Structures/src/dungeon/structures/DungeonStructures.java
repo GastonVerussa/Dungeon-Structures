@@ -14,6 +14,7 @@ import lineales.dinamicas.Lista;
 import propositoEspecifico.ColaPrioridad;
 import propositoEspecifico.DiccionarioAVL;
 import propositoEspecifico.DiccionarioHash;
+import propositoEspecifico.MapeoAMuchosAVL;
 import utiles.Aleatorio;
 import utiles.TecladoIn;
 
@@ -93,8 +94,7 @@ public class DungeonStructures {
                     break;
             }
         } while (op != 0);
-
-                                    
+         
         System.out.println("********  Gracias por jugar Dungeon & Structures ********");
         salida.println("\n\n-------------------------------------\n");
         salida.println("Estado del sistema luego al finalizar la ejecucion:");
@@ -716,7 +716,44 @@ public class DungeonStructures {
     }
     
     private static void menuSumarJugadorEspera(){
-                
+        
+        int op;
+        String[] opciones = {
+            "Sumar de a un jugador a la cola de espera",
+            "Sumar todos los jugadores a la cola de espera",
+        };
+
+        do {
+            
+        System.out.println();
+        System.out.println("------------------  Menu manejo cola de espera ---------------------");
+        for (int i = 0; i < opciones.length; i++) {
+            System.out.println((i + 1) + ".- " + opciones[i]);
+        }
+        System.out.println("0.- Volver");
+        System.out.println("-----------------------------------------------");
+
+        do {
+            op = TecladoIn.readLineInt();
+            if (op < 0 || op > opciones.length) {
+                System.out.println("El valor ingresado no es válido");
+            }
+        } while (op < 0 || op > opciones.length);
+
+            switch (op) {
+                case 1:
+                    sumarDeAUnJugadorCola();
+                    break;
+                case 2:
+                    sumarTodosLosJugadoresCola();
+                    break;
+            }
+        
+        } while (op != 0);
+    }
+    
+    private static void sumarDeAUnJugadorCola(){
+        
         char opcion;
         
         do{
@@ -739,6 +776,21 @@ public class DungeonStructures {
             }
         } while(opcion != 'N');
     }
+        
+    private static void sumarTodosLosJugadoresCola(){
+        Lista listaJugadores = jugadores.recuperarJugadores();
+        while(!listaJugadores.esVacia()){
+            int posicion = Aleatorio.intAleatorio(1, listaJugadores.longitud());
+            Jugador jugador = (Jugador) listaJugadores.recuperar(posicion);
+            listaJugadores.eliminar(posicion);
+            if(!jugadoresEnColaOEquipo.existeJugador(jugador.getNombre())){
+                System.out.println("Jugador " + jugador.getNombre() + " agregado a la cola de espera correctamente");
+                sumarJugadorCola(jugador);
+            }
+        }
+        System.out.println("Se han sumado todos los jugadores disponibles a la cola");
+    }
+    
     
     private static void menuCrearEquipo(){
         
@@ -793,6 +845,43 @@ public class DungeonStructures {
 
     private static void menuConsultasEquipos(){
         
+        int op;
+        String[] opciones = {
+            "Consultar un equipo",
+            "Conseguir ubicacion de todos los equipos"
+        };
+
+        do {
+            
+        System.out.println();
+        System.out.println("------------------  Menu consultas Items  ---------------------");
+        for (int i = 0; i < opciones.length; i++) {
+            System.out.println((i + 1) + ".- " + opciones[i]);
+        }
+        System.out.println("0.- Volver");
+        System.out.println("-----------------------------------------------");
+
+        do {
+            op = TecladoIn.readLineInt();
+            if (op < 0 || op > opciones.length) {
+                System.out.println("El valor ingresado no es válido");
+            }
+        } while (op < 0 || op > opciones.length);
+
+            switch (op) {
+                case 1:
+                    consultarEquipo();
+                    break;
+                case 2:
+                    consultarUbicacionEquipos();
+                    break;
+            }
+        
+        } while (op != 0);
+    }
+
+    private static void consultarEquipo(){
+        
         char opcion;
         
         do{
@@ -811,7 +900,24 @@ public class DungeonStructures {
             }
         } while(opcion != 'N');
     }
+    
+    private static void consultarUbicacionEquipos(){
 
+        Lista listaEquipos = equipos.recuperarEquipos().clone();
+        
+        MapeoAMuchosAVL mapeoLocaciones = new MapeoAMuchosAVL();
+        
+        while(!listaEquipos.esVacia()){
+            Equipo equipoActual = (Equipo) listaEquipos.recuperar(1);
+            listaEquipos.eliminar(1);
+            mapeoLocaciones.asociar(equipoActual.getLocacionActual(), equipoActual.getNombre());
+        }
+        
+        System.out.println("La ubicacion de todos los equipos es la siguiente: ");
+        System.out.println(mapeoLocaciones.toString());
+        
+    }
+    
     private static void menuConsultasItems(){
         int op;
         String[] opciones = {
@@ -1380,10 +1486,6 @@ public class DungeonStructures {
                     stringItems = stringItems.substring(1, stringItems.length() - 1);
                     String[] items = stringItems.split(", ");
                     
-                    /*for (String items1 : items) {
-                    System.out.println(items1.trim());
-                    }*/
-                    
                     for (String items1 : items) {
                         regalarItem(jugador, items1.trim());
                     }
@@ -1614,8 +1716,10 @@ public class DungeonStructures {
     private static void batallaEquipos(Equipo equipo1, Equipo equipo2){
         
         System.out.println("Iniciando batalla entre " + equipo1.getNombre() + " y " + equipo2.getNombre());
+        salida.println("Iniciando batalla entre " + equipo1.getNombre() + " y " + equipo2.getNombre());
         if(!equipo1.getLocacionActual().equals(equipo2.getLocacionActual())){
             System.out.println("Error. No se encuentran en la misma locacion, cancelando batalla");
+            salida.println("Error. No se encuentran en la misma locacion, cancelando batalla");
         } else {
             Equipo equipoInicial, equipoDefensor;
             //  El equipo de menor categoria es el que empieza, como la lista categorias
@@ -1631,6 +1735,7 @@ public class DungeonStructures {
             System.out.println("Categoria de " + equipo1.getNombre() + ": " + equipo1.getCategoria());
             System.out.println("Categoria de " + equipo2.getNombre() + ": " + equipo2.getCategoria());
             System.out.println("Comienza " + equipoInicial.getNombre());
+            salida.println("Comienza " + equipoInicial.getNombre());
             
             //  Jugadores aun no derrotados de cada equipo
             Jugador[] jugadoresEquipoInicial = equipoInicial.getParticipantes();
@@ -1761,8 +1866,10 @@ public class DungeonStructures {
         int def = defensor.calcularDef();
         int danio = atk - def;
         System.out.println("Jugador " + atacante.getNombre() + " golpea a " + defensor.getNombre());
+        salida.println("Jugador " + atacante.getNombre() + " golpea a " + defensor.getNombre());
         if(danio > 0){
             System.out.println("El ataque inflinge " + danio + " de danioo (" + atk + " ataque contra " + def + " defensa)");
+            salida.println("El ataque inflinge " + danio + " de danioo (" + atk + " ataque contra " + def + " defensa)");
             defensor.daniar(danio);
             if(defensor.esDerrotado()){
                 System.out.println(atacante.getNombre() + " derrota a " + defensor.getNombre() + ". Ganando $1000.");
@@ -1774,6 +1881,7 @@ public class DungeonStructures {
             }
         } else {
             System.out.println("El ataque no realiza danio (" + atk + " ataque contra " + def + " defensa)");
+            salida.println("El ataque no realiza danio (" + atk + " ataque contra " + def + " defensa)");
         }
         atacante.desgastarItems();
     }
