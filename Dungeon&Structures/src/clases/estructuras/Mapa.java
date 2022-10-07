@@ -1,15 +1,15 @@
 package clases.estructuras;
 
-import grafos.GrafoEtiquetado;
+import grafos.GrafoEtiquetadoViejo;
 import lineales.dinamicas.Lista;
 import utiles.Aleatorio;
 
 public class Mapa {
     
-    private final GrafoEtiquetado grafo;
+    private final GrafoEtiquetadoViejo grafo;
     
     public Mapa(){
-        grafo = new GrafoEtiquetado();
+        grafo = new GrafoEtiquetadoViejo();
     }
     
     public boolean insertarLocacion(String locacion){

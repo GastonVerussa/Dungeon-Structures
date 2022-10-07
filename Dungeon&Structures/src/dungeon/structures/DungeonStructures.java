@@ -14,6 +14,7 @@ import lineales.dinamicas.Lista;
 import propositoEspecifico.ColaPrioridad;
 import propositoEspecifico.DiccionarioAVL;
 import propositoEspecifico.DiccionarioHash;
+import clases.estructuras.TiendaItems;
 import propositoEspecifico.MapeoAMuchosAVL;
 import utiles.Aleatorio;
 import utiles.TecladoIn;
@@ -824,23 +825,30 @@ public class DungeonStructures {
     
     private static void menuBatalla(){
         
-        System.out.print("Escriba el nombre del primer equipo a batallar: ");
+        System.out.print("Escriba el nombre del primer equipo a batallar (\"cancelar\" para cancelar): ");
         String nombreEquipo1 = TecladoIn.readLine();
-        while(!equipos.existe(nombreEquipo1)){
+        while(!nombreEquipo1.equals("cancelar") && !equipos.existe(nombreEquipo1)){
             System.out.println("Error, equipo " + nombreEquipo1 + " no existe.");
-            System.out.print("Escriba el nombre del primer equipo a batallar: ");
+            System.out.print("Escriba el nombre del primer equipo a batallar (\"cancelar\" para cancelar): ");
             nombreEquipo1 = TecladoIn.readLine();
         }
         
-        System.out.print("Escriba el nombre del segundo equipo a batallar: ");
-        String nombreEquipo2 = TecladoIn.readLine();
-        while(!equipos.existe(nombreEquipo2)){
-            System.out.println("Error, equipo " + nombreEquipo2 + " no existe.");
-            System.out.print("Escriba el nombre del segundo equipo a batallar: ");
-            nombreEquipo2 = TecladoIn.readLine();
+        if(nombreEquipo1.equals("cancelar")){
+            System.out.println("Combate cancelado.");
+        } else {
+            System.out.print("Escriba el nombre del segundo equipo a batallar (\"cancelar\" para cancelar): ");
+            String nombreEquipo2 = TecladoIn.readLine();
+            while(!nombreEquipo2.equals("cancelar") && !equipos.existe(nombreEquipo2)){
+                System.out.println("Error, equipo " + nombreEquipo2 + " no existe.");
+                System.out.print("Escriba el nombre del segundo equipo a batallar (\"cancelar\" para cancelar): ");
+                nombreEquipo2 = TecladoIn.readLine();
+            }
+            if(nombreEquipo2.equals("cancelar")){
+                System.out.println("Combate cancelado.");
+            } else {
+                batallaEquipos(equipos.recuperar(nombreEquipo1), equipos.recuperar(nombreEquipo2));
+            }
         }
-        
-        batallaEquipos(equipos.recuperar(nombreEquipo1), equipos.recuperar(nombreEquipo2));
     }
 
     private static void menuConsultasEquipos(){
@@ -963,17 +971,13 @@ public class DungeonStructures {
         System.out.print("Escriba el precio maximo a consultar de los objetos: ");
         int presupuesto = TecladoIn.readLineInt();
         
-        Lista listaItems = tiendaItems.conseguirItemsAccesibles(presupuesto);
+        String stringItems = tiendaItems.conseguirItemsAccesibles(presupuesto);
         
-        if(listaItems.esVacia()){
+        if(stringItems.equals("")){
             System.out.println("No existen items accesibles con un presupuesto de " + presupuesto);
         } else {
             System.out.println("Los items accesibles con un presupuesto de " + presupuesto + " son: ");
-
-            for(int i = 1;  i <= listaItems.longitud(); i++){
-                Item objeto = (Item) listaItems.recuperar(i);
-                System.out.println(i + ") " + objeto.toString());
-            }
+            System.out.println(stringItems);
 
             System.out.println("\n Desea comprar algun item? (S / N)");
             char opcion = Character.toUpperCase(TecladoIn.readLineNonwhiteChar());
@@ -988,13 +992,9 @@ public class DungeonStructures {
                 Jugador jugadorCompra = jugadores.recuperarJugador(nombreJugador);
                 while(opcion != 'N'){
                     if(opcion == 'S'){
-                        System.out.print("Escriba la posicion del objeto a comprar ($" + jugadorCompra + " restantes del jugador): ");
-                        int posicionItem = TecladoIn.readLineInt();
-                        if(posicionItem < 1 || posicionItem > listaItems.longitud()){
-                            System.out.println("Error, posicion no valida.");
-                        } else {
-                            comprarItem(jugadorCompra, ((Item) listaItems.recuperar(posicionItem)).getCodigo());
-                        }
+                        System.out.print("Escriba el codigo del objeto a comprar ($" + jugadorCompra.getDinero() + " restantes del jugador): ");
+                        String codigoItem = TecladoIn.readLine();
+                        comprarItem(jugadorCompra, codigoItem);
                     }
                     System.out.println("Desea seguir comprando? (S / N)");
                     opcion = Character.toUpperCase(TecladoIn.readLineNonwhiteChar());
@@ -1011,18 +1011,13 @@ public class DungeonStructures {
         System.out.print("Escriba el precio maximo a consultar de los objetos: ");
         int precioMaximo = TecladoIn.readLineInt();
         
-        Lista listaItems = tiendaItems.conseguirItemsRango(precioMinimo, precioMaximo);
+        String stringItems = tiendaItems.conseguirItemsRango(precioMinimo, precioMaximo);
         
-        if(listaItems.esVacia()){
+        if(stringItems.equals("")){
             System.out.println("No existen items con precio entre $" + precioMinimo + " y $" + precioMaximo);
         } else {
             System.out.println("Los items con precio entre $" + precioMinimo + " y $" + precioMaximo + " son: ");
-
-            while(!listaItems.esVacia()){
-                Item objeto = (Item) listaItems.recuperar(1);
-                listaItems.eliminar(1);
-                System.out.println("-" + objeto.toString());
-            }
+            System.out.println(stringItems);
         }
     }
     
@@ -1358,16 +1353,13 @@ public class DungeonStructures {
     }
     
     private static void consultarItemsUnicos(){
-        Lista listaItemsUnicos = tiendaItems.recuperarItemsUnicos();
-        if(listaItemsUnicos.esVacia()){
+        String stringItemsUnicos = tiendaItems.recuperarItemsUnicos();
+        if(stringItemsUnicos.equals("")){
             System.out.println("No existen items unicos (que solo tienen una copia disponible)");
         } else {
-            System.out.println("Los items unicos (que solo tienen una copia disponible) son:");
-            while(!listaItemsUnicos.esVacia()){
-                Item objeto = (Item) listaItemsUnicos.recuperar(1);
-                listaItemsUnicos.eliminar(1);
-                System.out.println("-" + objeto.toStringCompleto());
-            }
+            System.out.print("Los items unicos (que solo tienen una copia disponible) son: { ");
+            System.out.print(stringItemsUnicos);
+            System.out.println(" }");
         }
     }
     
@@ -1643,7 +1635,7 @@ public class DungeonStructures {
         } else {
             Item itemAuxiliar = (Item) tablaItems.obtenerInformacion(codigoItem);
 
-            exito = itemAuxiliar.restarCopia();
+            exito = (itemAuxiliar.getCantCopiasDisp() != 0);
 
             if(exito){
                 jugador.insertarItem(new CopiaItem(itemAuxiliar.getCodigo(), itemAuxiliar.getNombre(), itemAuxiliar.getPrecio(), itemAuxiliar.getPuntosAtk(), itemAuxiliar.getPuntosDef()));
@@ -1868,8 +1860,8 @@ public class DungeonStructures {
         System.out.println("Jugador " + atacante.getNombre() + " golpea a " + defensor.getNombre());
         salida.println("Jugador " + atacante.getNombre() + " golpea a " + defensor.getNombre());
         if(danio > 0){
-            System.out.println("El ataque inflinge " + danio + " de danioo (" + atk + " ataque contra " + def + " defensa)");
-            salida.println("El ataque inflinge " + danio + " de danioo (" + atk + " ataque contra " + def + " defensa)");
+            System.out.println("El ataque inflinge " + danio + " de danio (" + atk + " ataque contra " + def + " defensa)");
+            salida.println("El ataque inflinge " + danio + " de danio (" + atk + " ataque contra " + def + " defensa)");
             defensor.daniar(danio);
             if(defensor.esDerrotado()){
                 System.out.println(atacante.getNombre() + " derrota a " + defensor.getNombre() + ". Ganando $1000.");
@@ -1891,6 +1883,8 @@ public class DungeonStructures {
         String resultado;
         
         resultado = "Items en la tienda \n\n-------------------------------------\n\n" + tiendaItems.toString();
+        resultado += "\n\n--------------------------------------------------------------------------\n\n";
+        resultado += "Items por codigo \n\n-------------------------------------\n\n" + tablaItems.toString();
         resultado += "\n\n--------------------------------------------------------------------------\n\n";
         resultado += "\nJugadores: \n\n-------------------------------------\n\n" + jugadores.toString();
         resultado += "\n\n--------------------------------------------------------------------------\n\n";

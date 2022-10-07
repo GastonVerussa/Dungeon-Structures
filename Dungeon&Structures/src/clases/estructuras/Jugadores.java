@@ -1,10 +1,9 @@
 package clases.estructuras;
 
 import clases.unidades.Jugador;
-import clases.unidades.JugadorRanking;
 import lineales.dinamicas.Lista;
 import propositoEspecifico.DiccionarioAVL;
-import conjuntistas.ArbolHeapMaximal;
+import propositoEspecifico.MapeoAMuchosAVL;
 
 public class Jugadores {
     
@@ -95,7 +94,7 @@ public class Jugadores {
             Jugador aux;
             //  Arbol Heap Maximal que servira para ordenar los Jugadores por cantidad
             //      de victorias, lo crea con la capacidad justa para los jugadores.
-            ArbolHeapMaximal arbolRanking = new ArbolHeapMaximal(listaJugadores.longitud());
+            MapeoAMuchosAVL mapeoRanking = new MapeoAMuchosAVL();
             //  While para recorrer todos los jugadores
             while(!listaJugadores.esVacia()){
                 //  Se podria recuperar siempre hacer un for recuperando i, pero entonces 
@@ -109,20 +108,23 @@ public class Jugadores {
                 //  Inserta en el arbol un objeto de clase JugadorRanking, la cual
                 //      implementa la interfaz Comparable, con el metodo compareTo 
                 //      comparando simplemente por la cantidad de victorias
-                arbolRanking.insertar(new JugadorRanking(aux.getNombre(), aux.getCantVictorias()));
+                mapeoRanking.asociar(aux.getCantVictorias(), aux.getNombre());
             }
             
+            resultado = mapeoRanking.toString();
+            
+            /*
             //  Variable Jugador Ranking para recorrer el arbol
             JugadorRanking auxJugadorRanking;
             //  Variable para guardar cual fue la ultima cantidad de victorias registrada
             int ultimaCantidad = -1;
             //  Mientras el arbol no este vacio
-            while(!arbolRanking.esVacio()){
+            while(!mapeoRanking.esVacio()){
                 //  Recupera la cima del nodo, el jugador con mayores victorias 
                 //      entre los jugadores del arbol
-                auxJugadorRanking = (JugadorRanking) arbolRanking.recuperarCima();
+                auxJugadorRanking = (JugadorRanking) mapeoRanking.recuperarCima();
                 //  Lo elimina del arbol para avanzar al siguiente
-                arbolRanking.eliminarCima();
+                mapeoRanking.eliminarCima();
                 //  Si es una nueva cantidad de victorias (Es una cantidad diferente
                 //      a la ultima registrada)
                 if(auxJugadorRanking.getCantVictorias() != ultimaCantidad){
@@ -136,8 +138,7 @@ public class Jugadores {
                     resultado += ", ";
                 }
                 //  Luego agrega el nombre del jugador
-                resultado += auxJugadorRanking.getNombre();
-            }
+                resultado += auxJugadorRanking.getNombre();*/
         }
         
         return resultado;
