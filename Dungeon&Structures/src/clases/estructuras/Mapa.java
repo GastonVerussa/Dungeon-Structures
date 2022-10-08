@@ -62,7 +62,7 @@ public class Mapa {
     }
     
     public Lista obtenerCaminosNoPasenPorLocacion(String origen, String destino, String locacionAEvitar){
-        return grafo.caminosPosiblesSinVertice(origen, destino, destino);
+        return grafo.caminosPosiblesSinVertice(origen, destino, locacionAEvitar);
     }
     
     public boolean existeLocacion(String nombre){

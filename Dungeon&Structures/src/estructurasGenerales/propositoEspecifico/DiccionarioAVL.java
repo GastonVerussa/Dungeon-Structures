@@ -478,6 +478,32 @@ public class DiccionarioAVL {
         } 
     }
     
+    public String jugadoresSubcadena(String subcadena){
+        return jugadoresSubcadenaAux(raiz, subcadena);
+    }
+    
+    private String jugadoresSubcadenaAux(NodoAVLDicc nodoActual, String subcadena){
+        
+        String resultado = "";
+        
+        //  Si el nodo existe
+        if(nodoActual != null){
+            //  Llena la lista en Inorden
+            String nombreJugador = (String) nodoActual.getClave();
+            if((subcadena.compareTo(nombreJugador) <= 0)){
+                resultado += jugadoresSubcadenaAux(nodoActual.getIzquierdo(), subcadena);
+            }
+            if(nombreJugador.startsWith(subcadena)){
+                resultado += nombreJugador + ", ";
+            }
+            if((subcadena.compareTo(nombreJugador) >= 0)){
+                resultado += jugadoresSubcadenaAux(nodoActual.getDerecho(), subcadena);
+            }
+        } 
+        
+        return resultado;
+    }
+    
     // devuelve falso si hay al menos un elemento cargado en la estructura y verdadero en caso contrario
     public boolean esVacio(){
         return this.raiz == null;
@@ -558,7 +584,7 @@ public class DiccionarioAVL {
                 }
                 
                 //  Coma para separar elementos o saber cual es hijo izquierdo y derecho
-                resultado += " , ";
+                resultado += " _ ";
 
                 //  Si el derecho existe, lo agrega
                 if(derecho != null){

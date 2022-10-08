@@ -47,12 +47,12 @@ public class RankingJugadores {
             resultado = obtenerRankingAux(nodo.getDerecho());
             
             //  Luego agrego el elemento al String
-            resultado += "\n Jugadores con " + nodo.getDominio().toString() + "victorias: { ";
+            resultado += "\n Jugadores con " + nodo.getDominio().toString() + " victorias: { ";
 
             Lista rango = nodo.getRango();
 
             for(int i = 1; i <= rango.longitud(); i++){
-                resultado += rango.recuperar(i).toString() + ", ";
+                resultado += rango.recuperar(i).toString() + " _ ";
             }
             //  Saca el ultimo ", "
             resultado = resultado.substring(0, resultado.length() - 2);

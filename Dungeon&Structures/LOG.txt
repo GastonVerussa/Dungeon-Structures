@@ -37,66 +37,66 @@ Jugadores:
 -------------------------------------
 
 Tabla AVL de jugadores: 
- Altura: 6. Jugador Nehnid, el hechicero cobarde. Hijos: Buo, el gladiador heroico , Olban, el espadachin experto
- Altura: 5. Jugador Buo, el gladiador heroico. Hijos: Bragrem, el hechicero noble , Eised, el barbaro heroico
- Altura: 4. Jugador Olban, el espadachin experto. Hijos: Nucrol, el barbaro heroico , Stam, el explorador novato
- Altura: 3. Jugador Bragrem, el hechicero noble. Hijos: Bragrem, el explorador experto , Buo, el espadachin experto
- Altura: 4. Jugador Eised, el barbaro heroico. Hijos: Chiang, el espadachin despiadado , Gler, el gladiador despiadado
- Altura: 3. Jugador Nucrol, el barbaro heroico. Hijos: Nehnid, el hechicero noble , Nucrol, el hechicero noble
- Altura: 3. Jugador Stam, el explorador novato. Hijos: Stam, el estratega cobarde , Stam, el hechicero experto
- Altura: 2. Jugador Bragrem, el explorador experto. Hijos: Bragrem, el espadachin experto , Bragrem, el gladiador despiadado
- Altura: 2. Jugador Buo, el espadachin experto. Hijos: Bragrem, el mago novato , Buo, el gladiador experto
- Altura: 3. Jugador Chiang, el espadachin despiadado. Hijos: Buo, el mago despiadado , Chiang, el hechicero cobarde
- Altura: 3. Jugador Gler, el gladiador despiadado. Hijos: Eised, el picaro noble , Nehnid, el estratega experto
- Altura: 1. Jugador Nehnid, el hechicero noble. Hijos:  , Nehnid, el picaro novato
- Altura: 2. Jugador Nucrol, el hechicero noble. Hijos: Nucrol, el espadachin noble , Olban, el barbaro novato
- Altura: 2. Jugador Stam, el estratega cobarde. Hijos: Olban, el espadachin valiente , Stam, el explorador cobarde
- Altura: 2. Jugador Stam, el hechicero experto. Hijos: Stam, el gladiador novato , Stam, el picaro despiadado
- Altura: 1. Jugador Bragrem, el espadachin experto. Hijos: Bragrem, el barbaro cobarde , Bragrem, el espadachin heroico
- Altura: 1. Jugador Bragrem, el gladiador despiadado. Hijos: Bragrem, el explorador valiente , Bragrem, el gladiador experto
- Altura: 1. Jugador Bragrem, el mago novato. Hijos: Bragrem, el hechicero novato , 
- Altura: 1. Jugador Buo, el gladiador experto. Hijos: Buo, el espadachin novato , 
- Altura: 2. Jugador Buo, el mago despiadado. Hijos: Buo, el hechicero valiente , Buo, el picaro valiente
- Altura: 2. Jugador Chiang, el hechicero cobarde. Hijos: Chiang, el espadachin heroico , Chiang, el mago heroico
- Altura: 2. Jugador Eised, el picaro noble. Hijos: Eised, el picaro despiadado , Gler, el espadachin cobarde
- Altura: 2. Jugador Nehnid, el estratega experto. Hijos: Gler, el hechicero valiente , Nehnid, el explorador despiadado
- Altura: 0. Jugador Nehnid, el picaro novato. Hijos:  , 
- Altura: 1. Jugador Nucrol, el espadachin noble. Hijos: Nucrol, el espadachin experto , Nucrol, el estratega despiadado
- Altura: 1. Jugador Olban, el barbaro novato. Hijos: Nucrol, el picaro noble , 
- Altura: 1. Jugador Olban, el espadachin valiente. Hijos:  , Olban, el mago cobarde
- Altura: 1. Jugador Stam, el explorador cobarde. Hijos:  , Stam, el explorador noble
- Altura: 0. Jugador Stam, el gladiador novato. Hijos:  , 
- Altura: 1. Jugador Stam, el picaro despiadado. Hijos: Stam, el mago experto , Stam, el picaro noble
- Altura: 0. Jugador Bragrem, el barbaro cobarde. Hijos:  , 
- Altura: 0. Jugador Bragrem, el espadachin heroico. Hijos:  , 
- Altura: 0. Jugador Bragrem, el explorador valiente. Hijos:  , 
- Altura: 0. Jugador Bragrem, el gladiador experto. Hijos:  , 
- Altura: 0. Jugador Bragrem, el hechicero novato. Hijos:  , 
- Altura: 0. Jugador Buo, el espadachin novato. Hijos:  , 
- Altura: 0. Jugador Buo, el hechicero valiente. Hijos:  , 
- Altura: 1. Jugador Buo, el picaro valiente. Hijos: Buo, el picaro despiadado , 
- Altura: 1. Jugador Chiang, el espadachin heroico. Hijos:  , Chiang, el estratega experto
- Altura: 1. Jugador Chiang, el mago heroico. Hijos: Chiang, el mago despiadado , Chiang, el picaro heroico
- Altura: 1. Jugador Eised, el picaro despiadado. Hijos: Eised, el gladiador despiadado , Eised, el picaro experto
- Altura: 1. Jugador Gler, el espadachin cobarde. Hijos: Gler, el barbaro heroico , Gler, el explorador noble
- Altura: 1. Jugador Gler, el hechicero valiente. Hijos:  , Gler, el picaro valiente
- Altura: 0. Jugador Nehnid, el explorador despiadado. Hijos:  , 
- Altura: 0. Jugador Nucrol, el espadachin experto. Hijos:  , 
- Altura: 0. Jugador Nucrol, el estratega despiadado. Hijos:  , 
- Altura: 0. Jugador Nucrol, el picaro noble. Hijos:  , 
- Altura: 0. Jugador Olban, el mago cobarde. Hijos:  , 
- Altura: 0. Jugador Stam, el explorador noble. Hijos:  , 
- Altura: 0. Jugador Stam, el mago experto. Hijos:  , 
- Altura: 0. Jugador Stam, el picaro noble. Hijos:  , 
- Altura: 0. Jugador Buo, el picaro despiadado. Hijos:  , 
- Altura: 0. Jugador Chiang, el estratega experto. Hijos:  , 
- Altura: 0. Jugador Chiang, el mago despiadado. Hijos:  , 
- Altura: 0. Jugador Chiang, el picaro heroico. Hijos:  , 
- Altura: 0. Jugador Eised, el gladiador despiadado. Hijos:  , 
- Altura: 0. Jugador Eised, el picaro experto. Hijos:  , 
- Altura: 0. Jugador Gler, el barbaro heroico. Hijos:  , 
- Altura: 0. Jugador Gler, el explorador noble. Hijos:  , 
- Altura: 0. Jugador Gler, el picaro valiente. Hijos:  , 
+ Altura: 6. Jugador Nehnid, el hechicero cobarde. Hijos: Buo, el gladiador heroico _ Olban, el espadachin experto
+ Altura: 5. Jugador Buo, el gladiador heroico. Hijos: Bragrem, el hechicero noble _ Eised, el barbaro heroico
+ Altura: 4. Jugador Olban, el espadachin experto. Hijos: Nucrol, el barbaro heroico _ Stam, el explorador novato
+ Altura: 3. Jugador Bragrem, el hechicero noble. Hijos: Bragrem, el explorador experto _ Buo, el espadachin experto
+ Altura: 4. Jugador Eised, el barbaro heroico. Hijos: Chiang, el espadachin despiadado _ Gler, el gladiador despiadado
+ Altura: 3. Jugador Nucrol, el barbaro heroico. Hijos: Nehnid, el hechicero noble _ Nucrol, el hechicero noble
+ Altura: 3. Jugador Stam, el explorador novato. Hijos: Stam, el estratega cobarde _ Stam, el hechicero experto
+ Altura: 2. Jugador Bragrem, el explorador experto. Hijos: Bragrem, el espadachin experto _ Bragrem, el gladiador despiadado
+ Altura: 2. Jugador Buo, el espadachin experto. Hijos: Bragrem, el mago novato _ Buo, el gladiador experto
+ Altura: 3. Jugador Chiang, el espadachin despiadado. Hijos: Buo, el mago despiadado _ Chiang, el hechicero cobarde
+ Altura: 3. Jugador Gler, el gladiador despiadado. Hijos: Eised, el picaro noble _ Nehnid, el estratega experto
+ Altura: 1. Jugador Nehnid, el hechicero noble. Hijos:  _ Nehnid, el picaro novato
+ Altura: 2. Jugador Nucrol, el hechicero noble. Hijos: Nucrol, el espadachin noble _ Olban, el barbaro novato
+ Altura: 2. Jugador Stam, el estratega cobarde. Hijos: Olban, el espadachin valiente _ Stam, el explorador cobarde
+ Altura: 2. Jugador Stam, el hechicero experto. Hijos: Stam, el gladiador novato _ Stam, el picaro despiadado
+ Altura: 1. Jugador Bragrem, el espadachin experto. Hijos: Bragrem, el barbaro cobarde _ Bragrem, el espadachin heroico
+ Altura: 1. Jugador Bragrem, el gladiador despiadado. Hijos: Bragrem, el explorador valiente _ Bragrem, el gladiador experto
+ Altura: 1. Jugador Bragrem, el mago novato. Hijos: Bragrem, el hechicero novato _ 
+ Altura: 1. Jugador Buo, el gladiador experto. Hijos: Buo, el espadachin novato _ 
+ Altura: 2. Jugador Buo, el mago despiadado. Hijos: Buo, el hechicero valiente _ Buo, el picaro valiente
+ Altura: 2. Jugador Chiang, el hechicero cobarde. Hijos: Chiang, el espadachin heroico _ Chiang, el mago heroico
+ Altura: 2. Jugador Eised, el picaro noble. Hijos: Eised, el picaro despiadado _ Gler, el espadachin cobarde
+ Altura: 2. Jugador Nehnid, el estratega experto. Hijos: Gler, el hechicero valiente _ Nehnid, el explorador despiadado
+ Altura: 0. Jugador Nehnid, el picaro novato. Hijos:  _ 
+ Altura: 1. Jugador Nucrol, el espadachin noble. Hijos: Nucrol, el espadachin experto _ Nucrol, el estratega despiadado
+ Altura: 1. Jugador Olban, el barbaro novato. Hijos: Nucrol, el picaro noble _ 
+ Altura: 1. Jugador Olban, el espadachin valiente. Hijos:  _ Olban, el mago cobarde
+ Altura: 1. Jugador Stam, el explorador cobarde. Hijos:  _ Stam, el explorador noble
+ Altura: 0. Jugador Stam, el gladiador novato. Hijos:  _ 
+ Altura: 1. Jugador Stam, el picaro despiadado. Hijos: Stam, el mago experto _ Stam, el picaro noble
+ Altura: 0. Jugador Bragrem, el barbaro cobarde. Hijos:  _ 
+ Altura: 0. Jugador Bragrem, el espadachin heroico. Hijos:  _ 
+ Altura: 0. Jugador Bragrem, el explorador valiente. Hijos:  _ 
+ Altura: 0. Jugador Bragrem, el gladiador experto. Hijos:  _ 
+ Altura: 0. Jugador Bragrem, el hechicero novato. Hijos:  _ 
+ Altura: 0. Jugador Buo, el espadachin novato. Hijos:  _ 
+ Altura: 0. Jugador Buo, el hechicero valiente. Hijos:  _ 
+ Altura: 1. Jugador Buo, el picaro valiente. Hijos: Buo, el picaro despiadado _ 
+ Altura: 1. Jugador Chiang, el espadachin heroico. Hijos:  _ Chiang, el estratega experto
+ Altura: 1. Jugador Chiang, el mago heroico. Hijos: Chiang, el mago despiadado _ Chiang, el picaro heroico
+ Altura: 1. Jugador Eised, el picaro despiadado. Hijos: Eised, el gladiador despiadado _ Eised, el picaro experto
+ Altura: 1. Jugador Gler, el espadachin cobarde. Hijos: Gler, el barbaro heroico _ Gler, el explorador noble
+ Altura: 1. Jugador Gler, el hechicero valiente. Hijos:  _ Gler, el picaro valiente
+ Altura: 0. Jugador Nehnid, el explorador despiadado. Hijos:  _ 
+ Altura: 0. Jugador Nucrol, el espadachin experto. Hijos:  _ 
+ Altura: 0. Jugador Nucrol, el estratega despiadado. Hijos:  _ 
+ Altura: 0. Jugador Nucrol, el picaro noble. Hijos:  _ 
+ Altura: 0. Jugador Olban, el mago cobarde. Hijos:  _ 
+ Altura: 0. Jugador Stam, el explorador noble. Hijos:  _ 
+ Altura: 0. Jugador Stam, el mago experto. Hijos:  _ 
+ Altura: 0. Jugador Stam, el picaro noble. Hijos:  _ 
+ Altura: 0. Jugador Buo, el picaro despiadado. Hijos:  _ 
+ Altura: 0. Jugador Chiang, el estratega experto. Hijos:  _ 
+ Altura: 0. Jugador Chiang, el mago despiadado. Hijos:  _ 
+ Altura: 0. Jugador Chiang, el picaro heroico. Hijos:  _ 
+ Altura: 0. Jugador Eised, el gladiador despiadado. Hijos:  _ 
+ Altura: 0. Jugador Eised, el picaro experto. Hijos:  _ 
+ Altura: 0. Jugador Gler, el barbaro heroico. Hijos:  _ 
+ Altura: 0. Jugador Gler, el explorador noble. Hijos:  _ 
+ Altura: 0. Jugador Gler, el picaro valiente. Hijos:  _ 
 
 --------------------------------------------------------------------------
 
@@ -137,7 +137,10 @@ No hay equipos formados
 --------------------------------------------------------------------------
 
 
-
+Se creo el jugador 0
+Tipo de jugador de 0 modificado de Defensor a DefensorCategoria de jugador de 0 modificado de Aficionado a AficionadoCategoria de jugador de 0 modificado de Aficionado a ProfesionalEl jugador 0 ha recibido $10El jugador 0 ha perdido $20Jugador 0 ha comprado exitosamente el objeto E010(casco runica del bosque)
+Copia de item del jugador 0 eliminado: casco runica del bosque, Codigo: E010, Precio: 80, Puntos de ataque: 15, Puntos de defensa: 5
+Se eliminó el jugador 0
 
 -------------------------------------
 
@@ -176,66 +179,66 @@ Jugadores:
 -------------------------------------
 
 Tabla AVL de jugadores: 
- Altura: 6. Jugador Nehnid, el hechicero cobarde. Hijos: Buo, el gladiador heroico , Olban, el espadachin experto
- Altura: 5. Jugador Buo, el gladiador heroico. Hijos: Bragrem, el hechicero noble , Eised, el barbaro heroico
- Altura: 4. Jugador Olban, el espadachin experto. Hijos: Nucrol, el barbaro heroico , Stam, el explorador novato
- Altura: 3. Jugador Bragrem, el hechicero noble. Hijos: Bragrem, el explorador experto , Buo, el espadachin experto
- Altura: 4. Jugador Eised, el barbaro heroico. Hijos: Chiang, el espadachin despiadado , Gler, el gladiador despiadado
- Altura: 3. Jugador Nucrol, el barbaro heroico. Hijos: Nehnid, el hechicero noble , Nucrol, el hechicero noble
- Altura: 3. Jugador Stam, el explorador novato. Hijos: Stam, el estratega cobarde , Stam, el hechicero experto
- Altura: 2. Jugador Bragrem, el explorador experto. Hijos: Bragrem, el espadachin experto , Bragrem, el gladiador despiadado
- Altura: 2. Jugador Buo, el espadachin experto. Hijos: Bragrem, el mago novato , Buo, el gladiador experto
- Altura: 3. Jugador Chiang, el espadachin despiadado. Hijos: Buo, el mago despiadado , Chiang, el hechicero cobarde
- Altura: 3. Jugador Gler, el gladiador despiadado. Hijos: Eised, el picaro noble , Nehnid, el estratega experto
- Altura: 1. Jugador Nehnid, el hechicero noble. Hijos:  , Nehnid, el picaro novato
- Altura: 2. Jugador Nucrol, el hechicero noble. Hijos: Nucrol, el espadachin noble , Olban, el barbaro novato
- Altura: 2. Jugador Stam, el estratega cobarde. Hijos: Olban, el espadachin valiente , Stam, el explorador cobarde
- Altura: 2. Jugador Stam, el hechicero experto. Hijos: Stam, el gladiador novato , Stam, el picaro despiadado
- Altura: 1. Jugador Bragrem, el espadachin experto. Hijos: Bragrem, el barbaro cobarde , Bragrem, el espadachin heroico
- Altura: 1. Jugador Bragrem, el gladiador despiadado. Hijos: Bragrem, el explorador valiente , Bragrem, el gladiador experto
- Altura: 1. Jugador Bragrem, el mago novato. Hijos: Bragrem, el hechicero novato , 
- Altura: 1. Jugador Buo, el gladiador experto. Hijos: Buo, el espadachin novato , 
- Altura: 2. Jugador Buo, el mago despiadado. Hijos: Buo, el hechicero valiente , Buo, el picaro valiente
- Altura: 2. Jugador Chiang, el hechicero cobarde. Hijos: Chiang, el espadachin heroico , Chiang, el mago heroico
- Altura: 2. Jugador Eised, el picaro noble. Hijos: Eised, el picaro despiadado , Gler, el espadachin cobarde
- Altura: 2. Jugador Nehnid, el estratega experto. Hijos: Gler, el hechicero valiente , Nehnid, el explorador despiadado
- Altura: 0. Jugador Nehnid, el picaro novato. Hijos:  , 
- Altura: 1. Jugador Nucrol, el espadachin noble. Hijos: Nucrol, el espadachin experto , Nucrol, el estratega despiadado
- Altura: 1. Jugador Olban, el barbaro novato. Hijos: Nucrol, el picaro noble , 
- Altura: 1. Jugador Olban, el espadachin valiente. Hijos:  , Olban, el mago cobarde
- Altura: 1. Jugador Stam, el explorador cobarde. Hijos:  , Stam, el explorador noble
- Altura: 0. Jugador Stam, el gladiador novato. Hijos:  , 
- Altura: 1. Jugador Stam, el picaro despiadado. Hijos: Stam, el mago experto , Stam, el picaro noble
- Altura: 0. Jugador Bragrem, el barbaro cobarde. Hijos:  , 
- Altura: 0. Jugador Bragrem, el espadachin heroico. Hijos:  , 
- Altura: 0. Jugador Bragrem, el explorador valiente. Hijos:  , 
- Altura: 0. Jugador Bragrem, el gladiador experto. Hijos:  , 
- Altura: 0. Jugador Bragrem, el hechicero novato. Hijos:  , 
- Altura: 0. Jugador Buo, el espadachin novato. Hijos:  , 
- Altura: 0. Jugador Buo, el hechicero valiente. Hijos:  , 
- Altura: 1. Jugador Buo, el picaro valiente. Hijos: Buo, el picaro despiadado , 
- Altura: 1. Jugador Chiang, el espadachin heroico. Hijos:  , Chiang, el estratega experto
- Altura: 1. Jugador Chiang, el mago heroico. Hijos: Chiang, el mago despiadado , Chiang, el picaro heroico
- Altura: 1. Jugador Eised, el picaro despiadado. Hijos: Eised, el gladiador despiadado , Eised, el picaro experto
- Altura: 1. Jugador Gler, el espadachin cobarde. Hijos: Gler, el barbaro heroico , Gler, el explorador noble
- Altura: 1. Jugador Gler, el hechicero valiente. Hijos:  , Gler, el picaro valiente
- Altura: 0. Jugador Nehnid, el explorador despiadado. Hijos:  , 
- Altura: 0. Jugador Nucrol, el espadachin experto. Hijos:  , 
- Altura: 0. Jugador Nucrol, el estratega despiadado. Hijos:  , 
- Altura: 0. Jugador Nucrol, el picaro noble. Hijos:  , 
- Altura: 0. Jugador Olban, el mago cobarde. Hijos:  , 
- Altura: 0. Jugador Stam, el explorador noble. Hijos:  , 
- Altura: 0. Jugador Stam, el mago experto. Hijos:  , 
- Altura: 0. Jugador Stam, el picaro noble. Hijos:  , 
- Altura: 0. Jugador Buo, el picaro despiadado. Hijos:  , 
- Altura: 0. Jugador Chiang, el estratega experto. Hijos:  , 
- Altura: 0. Jugador Chiang, el mago despiadado. Hijos:  , 
- Altura: 0. Jugador Chiang, el picaro heroico. Hijos:  , 
- Altura: 0. Jugador Eised, el gladiador despiadado. Hijos:  , 
- Altura: 0. Jugador Eised, el picaro experto. Hijos:  , 
- Altura: 0. Jugador Gler, el barbaro heroico. Hijos:  , 
- Altura: 0. Jugador Gler, el explorador noble. Hijos:  , 
- Altura: 0. Jugador Gler, el picaro valiente. Hijos:  , 
+ Altura: 6. Jugador Nehnid, el hechicero cobarde. Hijos: Buo, el gladiador heroico _ Olban, el espadachin experto
+ Altura: 5. Jugador Buo, el gladiador heroico. Hijos: Bragrem, el hechicero noble _ Eised, el barbaro heroico
+ Altura: 4. Jugador Olban, el espadachin experto. Hijos: Nucrol, el barbaro heroico _ Stam, el explorador novato
+ Altura: 3. Jugador Bragrem, el hechicero noble. Hijos: Bragrem, el explorador experto _ Buo, el espadachin experto
+ Altura: 4. Jugador Eised, el barbaro heroico. Hijos: Chiang, el espadachin despiadado _ Gler, el gladiador despiadado
+ Altura: 3. Jugador Nucrol, el barbaro heroico. Hijos: Nehnid, el hechicero noble _ Nucrol, el hechicero noble
+ Altura: 3. Jugador Stam, el explorador novato. Hijos: Stam, el estratega cobarde _ Stam, el hechicero experto
+ Altura: 2. Jugador Bragrem, el explorador experto. Hijos: Bragrem, el espadachin experto _ Bragrem, el gladiador despiadado
+ Altura: 2. Jugador Buo, el espadachin experto. Hijos: Bragrem, el mago novato _ Buo, el gladiador experto
+ Altura: 3. Jugador Chiang, el espadachin despiadado. Hijos: Buo, el mago despiadado _ Chiang, el hechicero cobarde
+ Altura: 3. Jugador Gler, el gladiador despiadado. Hijos: Eised, el picaro noble _ Nehnid, el estratega experto
+ Altura: 1. Jugador Nehnid, el hechicero noble. Hijos:  _ Nehnid, el picaro novato
+ Altura: 2. Jugador Nucrol, el hechicero noble. Hijos: Nucrol, el espadachin noble _ Olban, el barbaro novato
+ Altura: 2. Jugador Stam, el estratega cobarde. Hijos: Olban, el espadachin valiente _ Stam, el explorador cobarde
+ Altura: 2. Jugador Stam, el hechicero experto. Hijos: Stam, el gladiador novato _ Stam, el picaro despiadado
+ Altura: 1. Jugador Bragrem, el espadachin experto. Hijos: Bragrem, el barbaro cobarde _ Bragrem, el espadachin heroico
+ Altura: 1. Jugador Bragrem, el gladiador despiadado. Hijos: Bragrem, el explorador valiente _ Bragrem, el gladiador experto
+ Altura: 1. Jugador Bragrem, el mago novato. Hijos: Bragrem, el hechicero novato _ 
+ Altura: 1. Jugador Buo, el gladiador experto. Hijos: Buo, el espadachin novato _ 
+ Altura: 2. Jugador Buo, el mago despiadado. Hijos: Buo, el hechicero valiente _ Buo, el picaro valiente
+ Altura: 2. Jugador Chiang, el hechicero cobarde. Hijos: Chiang, el espadachin heroico _ Chiang, el mago heroico
+ Altura: 2. Jugador Eised, el picaro noble. Hijos: Eised, el picaro despiadado _ Gler, el espadachin cobarde
+ Altura: 2. Jugador Nehnid, el estratega experto. Hijos: Gler, el hechicero valiente _ Nehnid, el explorador despiadado
+ Altura: 0. Jugador Nehnid, el picaro novato. Hijos:  _ 
+ Altura: 1. Jugador Nucrol, el espadachin noble. Hijos: Nucrol, el espadachin experto _ Nucrol, el estratega despiadado
+ Altura: 1. Jugador Olban, el barbaro novato. Hijos: Nucrol, el picaro noble _ 
+ Altura: 1. Jugador Olban, el espadachin valiente. Hijos:  _ Olban, el mago cobarde
+ Altura: 1. Jugador Stam, el explorador cobarde. Hijos:  _ Stam, el explorador noble
+ Altura: 0. Jugador Stam, el gladiador novato. Hijos:  _ 
+ Altura: 1. Jugador Stam, el picaro despiadado. Hijos: Stam, el mago experto _ Stam, el picaro noble
+ Altura: 0. Jugador Bragrem, el barbaro cobarde. Hijos:  _ 
+ Altura: 0. Jugador Bragrem, el espadachin heroico. Hijos:  _ 
+ Altura: 0. Jugador Bragrem, el explorador valiente. Hijos:  _ 
+ Altura: 0. Jugador Bragrem, el gladiador experto. Hijos:  _ 
+ Altura: 0. Jugador Bragrem, el hechicero novato. Hijos:  _ 
+ Altura: 0. Jugador Buo, el espadachin novato. Hijos:  _ 
+ Altura: 0. Jugador Buo, el hechicero valiente. Hijos:  _ 
+ Altura: 1. Jugador Buo, el picaro valiente. Hijos: Buo, el picaro despiadado _ 
+ Altura: 1. Jugador Chiang, el espadachin heroico. Hijos:  _ Chiang, el estratega experto
+ Altura: 1. Jugador Chiang, el mago heroico. Hijos: Chiang, el mago despiadado _ Chiang, el picaro heroico
+ Altura: 1. Jugador Eised, el picaro despiadado. Hijos: Eised, el gladiador despiadado _ Eised, el picaro experto
+ Altura: 1. Jugador Gler, el espadachin cobarde. Hijos: Gler, el barbaro heroico _ Gler, el explorador noble
+ Altura: 1. Jugador Gler, el hechicero valiente. Hijos:  _ Gler, el picaro valiente
+ Altura: 0. Jugador Nehnid, el explorador despiadado. Hijos:  _ 
+ Altura: 0. Jugador Nucrol, el espadachin experto. Hijos:  _ 
+ Altura: 0. Jugador Nucrol, el estratega despiadado. Hijos:  _ 
+ Altura: 0. Jugador Nucrol, el picaro noble. Hijos:  _ 
+ Altura: 0. Jugador Olban, el mago cobarde. Hijos:  _ 
+ Altura: 0. Jugador Stam, el explorador noble. Hijos:  _ 
+ Altura: 0. Jugador Stam, el mago experto. Hijos:  _ 
+ Altura: 0. Jugador Stam, el picaro noble. Hijos:  _ 
+ Altura: 0. Jugador Buo, el picaro despiadado. Hijos:  _ 
+ Altura: 0. Jugador Chiang, el estratega experto. Hijos:  _ 
+ Altura: 0. Jugador Chiang, el mago despiadado. Hijos:  _ 
+ Altura: 0. Jugador Chiang, el picaro heroico. Hijos:  _ 
+ Altura: 0. Jugador Eised, el gladiador despiadado. Hijos:  _ 
+ Altura: 0. Jugador Eised, el picaro experto. Hijos:  _ 
+ Altura: 0. Jugador Gler, el barbaro heroico. Hijos:  _ 
+ Altura: 0. Jugador Gler, el explorador noble. Hijos:  _ 
+ Altura: 0. Jugador Gler, el picaro valiente. Hijos:  _ 
 
 --------------------------------------------------------------------------
 

@@ -360,7 +360,7 @@ public class GrafoEtiquetadoIntMod {
             Dato<NodoVertInt> nodoOrigen = new Dato(null), nodoDestino = new Dato(null);
         
             if(ubicarVertices(origen, destino, nodoOrigen, nodoDestino)){
-                caminoMasCortoAux(nodoDestino.get(), destino, new Lista(), resultado);
+                caminoMasCortoAux(nodoOrigen.get(), destino, new Lista(), resultado);
             }
         }
         return resultado;
@@ -670,7 +670,7 @@ public class GrafoEtiquetadoIntMod {
         
             if(ubicarVertices(origen, destino, nodoOrigen, nodoDestino)){
                 //  Llama a la funcion privada para conseguir el camino mas corto
-                caminoMasCortoEtiquetaAux(nodoOrigen.get(), destino, new Lista(), 0, resultado, new Dato<Integer>(-1));
+                caminoMasCortoEtiquetaAux(nodoOrigen.get(), destino, new Lista(), 0, resultado, new Dato(-1));
             }
         }
         

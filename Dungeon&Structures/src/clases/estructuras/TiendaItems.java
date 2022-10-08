@@ -562,7 +562,7 @@ public class TiendaItems {
             for(int i = 1; i <= rangoNodo.longitud(); i++){
                 Item elemento = (Item) rangoNodo.recuperar(i);
                 if(elemento.getCantCopiasDisp() == 1){
-                    stringItems += ", " + elemento.getCodigo() ;
+                    stringItems += elemento.getCodigo() + ", " ;
                 }
             }
             stringItems += recuperarItemsUnicosAux(nodo.getDerecho());

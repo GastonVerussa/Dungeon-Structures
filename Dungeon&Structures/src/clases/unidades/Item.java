@@ -96,7 +96,7 @@ public class Item implements Comparable<Item>{
         
         resultado = "Item " + nombre;
         resultado += ", Codigo: " + codigo;
-        resultado += ", Precio: " + precio + ", Puntos de ataque: " + puntosAtk;
+        resultado += ", Precio: $" + precio + ", Puntos de ataque: " + puntosAtk;
         resultado += ", Puntos de defensa: " + puntosDef;
         resultado += ", Copias: " + cantCopiasDisp;
         

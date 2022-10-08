@@ -4,15 +4,18 @@ import estructurasGenerales.lineales.Cola;
 import estructurasGenerales.lineales.Pila;
 import estructurasGenerales.lineales.Lista;
 import clases.unidades.Jugador;
+import estructurasGenerales.propositoEspecifico.DiccionarioAVL;
 
 public class ColaPrioridad {
     
     private NodoCP inicio;
     private Lista prioridades;
+    private DiccionarioAVL categorias;
     
     //  Crea una cola de prioridad sin elementos.
-    public ColaPrioridad(Lista prioridades){
+    public ColaPrioridad(Lista prioridades, DiccionarioAVL categorias){
         this.prioridades = prioridades;
+        this.categorias = categorias;
         inicio = null;
     }
     
@@ -105,7 +108,7 @@ public class ColaPrioridad {
     public ColaPrioridad clone(){
         
         //  Variable que guarda el resultado
-        ColaPrioridad resultado = new ColaPrioridad(prioridades);
+        ColaPrioridad resultado = new ColaPrioridad(prioridades, categorias);
         
         //  Variable auxiliar para recorrer la estructura
         NodoCP aux = inicio;
@@ -162,8 +165,10 @@ public class ColaPrioridad {
             //  Mientras queden nodos por recorrer
             while(aux != null){
                 
+                String categoriaActual = (String) categorias.obtenerInformacion((Comparable) prioridades.recuperar((int) aux.getPrioridad()));
+                
                 //  Agrega esto al string
-                resultado += "\nJugadores de categoria " + prioridades.recuperar((int) aux.getPrioridad()) + ": { ";
+                resultado += "\nJugadores de categoria " + categoriaActual + ": { ";
                 //  Cola que clona la cola interna del nodo, para poder recorrerla sin
                 //      modificar la original
                 Cola colaAux = aux.getItems().clone();

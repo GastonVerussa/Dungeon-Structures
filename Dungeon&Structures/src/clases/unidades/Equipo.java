@@ -164,8 +164,9 @@ public class Equipo {
         }
         resultado += "Jugadores: ";
         for(Jugador jugadorActual : participantes){
-            resultado += jugadorActual.getNombre() + ", ";
+            resultado += jugadorActual.getNombre() + "_ ";
         }
+        resultado = resultado.substring(0, resultado.length() - 2);
         //}
         
         return resultado;

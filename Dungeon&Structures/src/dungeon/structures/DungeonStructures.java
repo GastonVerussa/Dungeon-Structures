@@ -121,7 +121,7 @@ public class DungeonStructures {
         prioridades.insertar('P', 1);
         prioridades.insertar('A', 2);
         prioridades.insertar('N', 3);
-        colaEspera = new ColaPrioridad(prioridades);
+        colaEspera = new ColaPrioridad(prioridades, categorias);
         tipos.insertar('G', "Guerrero");
         tipos.insertar('D', "Defensor");
         
@@ -1097,14 +1097,7 @@ public class DungeonStructures {
         String subcadena = TecladoIn.readLine();
         
         System.out.print("Jugadores que comienzan con la subcadena \"" + subcadena + "\" son: ");
-        Lista listaNombreJugadores = jugadores.jugadoresSubcadena(subcadena);
-        System.out.print("(");
-        while(!listaNombreJugadores.esVacia()){
-            String jugadorActual = (String) listaNombreJugadores.recuperar(1);
-            listaNombreJugadores.eliminar(1);
-            System.out.print(jugadorActual + ", ");
-        }
-        System.out.print(")");
+        System.out.println(jugadores.jugadoresSubcadena(subcadena));
     }
     
     private static void menuConsultasLocaciones(){
@@ -1113,7 +1106,7 @@ public class DungeonStructures {
             "Conseguir locaciones adyacentes a una locacion",
             "Obtener recorrido de menor distancia entre dos locaciones",
             "Obtener recorrido con menor locaciones entre dos locaciones",
-            "Obtener todos los recorridos entre dos locaciones que no superen cierta distancia",
+            "Obtener todos los recorridos entre dos locaciones con distancia limitada",
             "Obtener todos los recorridos entre dos locaciones que no pasen por una tercera locacion"
         };
 
@@ -1282,7 +1275,7 @@ public class DungeonStructures {
         
         System.out.print("Escriba el nombre de la locacion a ignorar por los recorrido: ");
         String locacionIgnorada = TecladoIn.readLine();
-        while(!mapa.existeLocacion(destino) && (locacionIgnorada.equals(origen) || locacionIgnorada.equals(destino))){
+        while(!mapa.existeLocacion(locacionIgnorada) && (locacionIgnorada.equals(origen) || locacionIgnorada.equals(destino))){
             System.out.println("Error, locacion " + destino + " no existe o es la misma que el origen o destino.");
             System.out.print("Escriba el nombre de la locacion a ignorar por los recorrido: ");
             locacionIgnorada = TecladoIn.readLine();
@@ -1716,8 +1709,8 @@ public class DungeonStructures {
                 equipoInicial = equipo2;
                 equipoDefensor = equipo1;
             }
-            System.out.println("Categoria de " + equipo1.getNombre() + ": " + equipo1.getCategoria());
-            System.out.println("Categoria de " + equipo2.getNombre() + ": " + equipo2.getCategoria());
+            System.out.println("Categoria de " + equipo1.getNombre() + ": " + nombreCategoria(equipo1.getCategoria()));
+            System.out.println("Categoria de " + equipo2.getNombre() + ": " + nombreCategoria(equipo2.getCategoria()));
             System.out.println("Comienza " + equipoInicial.getNombre());
             salida.println("Comienza " + equipoInicial.getNombre());
             
@@ -1725,21 +1718,20 @@ public class DungeonStructures {
             Jugador[] jugadoresEquipoInicial = equipoInicial.getParticipantes();
             Jugador[] jugadoresEquipoDefensor = equipoDefensor.getParticipantes();
 
+            System.out.println("Jugadores de " + equipoInicial.getNombre() + ":");
             Lista jugadoresRestantesInicial = new Lista();
             for (Jugador jugadorActual : jugadoresEquipoInicial) {
                 jugadoresRestantesInicial.insertar(jugadorActual, 1);
+                System.out.println("\n" + jugadorActual.toString());
             }
+            System.out.println();
             
+            System.out.println("Jugadores de " + equipoDefensor.getNombre() + ":");
             Lista jugadoresRestantesDefensor = new Lista();
             for(Jugador jugadorActual : jugadoresEquipoDefensor) {
                 jugadoresRestantesDefensor.insertar(jugadorActual, 1);
+                System.out.println("\n" + jugadorActual.toString());
             }
-            
-            System.out.println("Jugadores de " + equipoInicial.getNombre() + ":");
-            System.out.println(jugadoresRestantesInicial.toString());
-            System.out.println();
-            System.out.println("Jugadores de " + equipoDefensor.getNombre() + ":");
-            System.out.println(jugadoresRestantesDefensor.toString());
             System.out.println();
             
             Equipo equipoGanador = null;

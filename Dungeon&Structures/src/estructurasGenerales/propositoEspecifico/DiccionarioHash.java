@@ -343,7 +343,8 @@ public class DiccionarioHash {
                     for(int i = 0; i < jugadores.length - 1; i++){
                         resultado += jugadores[i].getNombre() + " _ ";
                     }
-                    resultado += " y " + jugadores[jugadores.length - 1].getNombre();
+                    resultado = resultado.substring(0, resultado.length() - 2);
+                    resultado += "y " + jugadores[jugadores.length - 1].getNombre();
                     //  Aumenta la cantidad de elementos copiados
                     elementosCopiados++;
                     //  Y va al siguiente nodo
