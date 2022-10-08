@@ -1,16 +1,17 @@
 package clases.estructuras;
 
 import clases.unidades.Jugador;
-import lineales.dinamicas.Lista;
-import propositoEspecifico.DiccionarioAVL;
-import propositoEspecifico.MapeoAMuchosAVL;
+import estructurasGenerales.lineales.Lista;
+import estructurasGenerales.propositoEspecifico.DiccionarioAVL;
 
 public class Jugadores {
     
-    private DiccionarioAVL tablaJugadores;
+    private final DiccionarioAVL tablaJugadores;
+    private final RankingJugadores ranking;
     
     public Jugadores(){
         this.tablaJugadores = new DiccionarioAVL();
+        this.ranking = new RankingJugadores();
     }
     
     public boolean agregarJugador(String nombre, String tipo, String categoria, int dinero){
@@ -78,70 +79,7 @@ public class Jugadores {
     //  Funcion para obtener un String con el ranking de los jugadores segun su 
     //      cantidad de victorias
     public String obtenerRanking(){
-        
-        String resultado;
-        
-        //  Si esta vacio
-        if(this.esVacio()){
-            //  Devuelve lo siguiente
-            resultado = "Ranking: No hay jugadores";
-        } else {
-            //  Si no esta vacio
-            resultado = "Ranking: ";
-            //  Consigue la lista de jugadores ordenada por nombre
-            Lista listaJugadores = tablaJugadores.listarDatos();
-            //  Variable para recorrer la lista
-            Jugador aux;
-            //  Arbol Heap Maximal que servira para ordenar los Jugadores por cantidad
-            //      de victorias, lo crea con la capacidad justa para los jugadores.
-            MapeoAMuchosAVL mapeoRanking = new MapeoAMuchosAVL();
-            //  While para recorrer todos los jugadores
-            while(!listaJugadores.esVacia()){
-                //  Se podria recuperar siempre hacer un for recuperando i, pero entonces 
-                //      cada bucle del for seria de orden(N), cuando al recuperar 
-                //      y eliminar la primera posicion se convierte en orden(1)
-                
-                //  Recupera el primer elemento
-                aux = (Jugador) listaJugadores.recuperar(1);
-                //  Y lo elimina
-                listaJugadores.eliminar(1);
-                //  Inserta en el arbol un objeto de clase JugadorRanking, la cual
-                //      implementa la interfaz Comparable, con el metodo compareTo 
-                //      comparando simplemente por la cantidad de victorias
-                mapeoRanking.asociar(aux.getCantVictorias(), aux.getNombre());
-            }
-            
-            resultado = mapeoRanking.toString();
-            
-            /*
-            //  Variable Jugador Ranking para recorrer el arbol
-            JugadorRanking auxJugadorRanking;
-            //  Variable para guardar cual fue la ultima cantidad de victorias registrada
-            int ultimaCantidad = -1;
-            //  Mientras el arbol no este vacio
-            while(!mapeoRanking.esVacio()){
-                //  Recupera la cima del nodo, el jugador con mayores victorias 
-                //      entre los jugadores del arbol
-                auxJugadorRanking = (JugadorRanking) mapeoRanking.recuperarCima();
-                //  Lo elimina del arbol para avanzar al siguiente
-                mapeoRanking.eliminarCima();
-                //  Si es una nueva cantidad de victorias (Es una cantidad diferente
-                //      a la ultima registrada)
-                if(auxJugadorRanking.getCantVictorias() != ultimaCantidad){
-                    //  Agrega al resultado una nueva linea donde iran todos los jugadores
-                    //      que tengan esa cantidad de victorias
-                    resultado += "\nJugadores con " + auxJugadorRanking.getCantVictorias() + " victorias: ";
-                } else {
-                    //  Si es la misma a la ultima registrada, significa que tiene que ir
-                    //      en la misma linea del String al anterior, asi que solo
-                    //      los separa con una coma
-                    resultado += ", ";
-                }
-                //  Luego agrega el nombre del jugador
-                resultado += auxJugadorRanking.getNombre();*/
-        }
-        
-        return resultado;
+        return ranking.obtenerRanking(this.recuperarJugadores());
     }
     
     public boolean esVacio(){

@@ -10,12 +10,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import lineales.dinamicas.Lista;
-import propositoEspecifico.ColaPrioridad;
-import propositoEspecifico.DiccionarioAVL;
-import propositoEspecifico.DiccionarioHash;
+import estructurasGenerales.lineales.Lista;
+import estructurasGenerales.propositoEspecifico.ColaPrioridad;
+import estructurasGenerales.propositoEspecifico.DiccionarioAVL;
+import estructurasGenerales.propositoEspecifico.DiccionarioHash;
 import clases.estructuras.TiendaItems;
-import propositoEspecifico.MapeoAMuchosAVL;
+import estructurasGenerales.propositoEspecifico.MapeoAMuchosAVL;
 import utiles.Aleatorio;
 import utiles.TecladoIn;
 
@@ -111,7 +111,6 @@ public class DungeonStructures {
         tiendaItems = new TiendaItems();
         tablaItems = new DiccionarioHash();
         direccion = System.getProperty("user.dir") + "\\";
-        colaEspera = new ColaPrioridad();
         jugadoresEnColaOEquipo = new Jugadores();
         categorias = new DiccionarioAVL();
         tipos = new DiccionarioAVL();
@@ -122,6 +121,7 @@ public class DungeonStructures {
         prioridades.insertar('P', 1);
         prioridades.insertar('A', 2);
         prioridades.insertar('N', 3);
+        colaEspera = new ColaPrioridad(prioridades);
         tipos.insertar('G', "Guerrero");
         tipos.insertar('D', "Defensor");
         
@@ -1193,9 +1193,7 @@ public class DungeonStructures {
         if(recorrido.esVacia()){
             System.out.println("No existe un camino posible entre " + origen + " y " + destino);
         } else {
-            int distanciaRecorrido = (int) recorrido.recuperar(1);
-            recorrido.eliminar(1);
-            System.out.println("El camino mas corto entre " + origen + " y " + destino + " es de " + distanciaRecorrido + "km y es el siguiente: ");
+            System.out.println("El camino mas corto entre " + origen + " y " + destino + " es el siguiente: ");
             System.out.println(recorrido.toString());
         }
         
@@ -1224,9 +1222,7 @@ public class DungeonStructures {
         if(recorrido.esVacia()){
             System.out.println("No existe un camino posible entre " + origen + " y " + destino);
         } else {
-            int distanciaRecorrido = (int) recorrido.recuperar(1);
-            recorrido.eliminar(1);
-            System.out.println("El camino mas corto entre " + origen + " y " + destino + " es de " + distanciaRecorrido + "km y es el siguiente: ");
+            System.out.println("El camino mas corto entre " + origen + " y " + destino + " es el siguiente: ");
             System.out.println(recorrido.toString());
         }
     }
@@ -1261,9 +1257,7 @@ public class DungeonStructures {
             while(!caminosCorrectos.esVacia()){
                 Lista recorrido = (Lista) caminosCorrectos.recuperar(1);
                 caminosCorrectos.eliminar(1);
-                int distanciaRecorrido = (int) recorrido.recuperar(1);
-                recorrido.eliminar(1);
-                System.out.println("-Camino: " + recorrido.toString() + ", con " + distanciaRecorrido + "km de distancia.");
+                System.out.println("-Camino: " + recorrido.toString());
             }
         }
     }
@@ -1303,9 +1297,7 @@ public class DungeonStructures {
             while(!caminosCorrectos.esVacia()){
                 Lista recorrido = (Lista) caminosCorrectos.recuperar(1);
                 caminosCorrectos.eliminar(1);
-                int distanciaRecorrido = (int) recorrido.recuperar(1);
-                recorrido.eliminar(1);
-                System.out.println("-Camino: " + recorrido.toString() + ", con " + distanciaRecorrido + "km de distancia.");
+                System.out.println("-Camino: " + recorrido.toString());
             }
         }
     }
@@ -1884,8 +1876,8 @@ public class DungeonStructures {
         
         resultado = "Items en la tienda \n\n-------------------------------------\n\n" + tiendaItems.toString();
         resultado += "\n\n--------------------------------------------------------------------------\n\n";
-        resultado += "Items por codigo \n\n-------------------------------------\n\n" + tablaItems.toString();
-        resultado += "\n\n--------------------------------------------------------------------------\n\n";
+        //resultado += "Items por codigo \n\n-------------------------------------\n\n" + tablaItems.toString();
+        //resultado += "\n\n--------------------------------------------------------------------------\n\n";
         resultado += "\nJugadores: \n\n-------------------------------------\n\n" + jugadores.toString();
         resultado += "\n\n--------------------------------------------------------------------------\n\n";
         resultado += "\n Mapa: \n\n-------------------------------------\n\n" + mapa.toString();

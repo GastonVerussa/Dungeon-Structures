@@ -1,7 +1,7 @@
 package clases.unidades;
 
-import lineales.dinamicas.Lista;
-import propositoEspecifico.Conjunto;
+import estructurasGenerales.lineales.Lista;
+import estructurasGenerales.propositoEspecifico.Conjunto;
 import utiles.Aleatorio;
 
 public class Jugador{
@@ -11,9 +11,9 @@ public class Jugador{
     private char tipo;
     private static Conjunto tipos = new Conjunto();
     private int dinero;
-    private Lista items;
+    private final Lista items;
     private int salud;
-    private static final int saludInicial = 100;
+    private static final int SALUD_INICIAL = 100;
     //  Posibilidades categoria: novato 'N', aficionado 'A' o profesional 'P'
     private char categoria;
     private static Lista categorias = new Lista();
@@ -35,7 +35,7 @@ public class Jugador{
             this.categoria = 'N';
         }
         this.dinero = dinero;
-        this.salud = saludInicial;
+        this.salud = SALUD_INICIAL;
         this.cantDerrotas = 0;
         this.cantVictorias = 0;
         this.items = new Lista();
@@ -46,7 +46,7 @@ public class Jugador{
         this.tipo = tipo;
         this.categoria = categoria;
         this.dinero = dinero;
-        this.salud = saludInicial;
+        this.salud = SALUD_INICIAL;
         this.cantDerrotas = 0;
         this.cantVictorias = 0;
         this.items = new Lista();
@@ -198,7 +198,7 @@ public class Jugador{
     }
     
     public void restablecerSalud(){
-        salud = saludInicial;
+        salud = SALUD_INICIAL;
     }
     
     public String toStringCompleto(){

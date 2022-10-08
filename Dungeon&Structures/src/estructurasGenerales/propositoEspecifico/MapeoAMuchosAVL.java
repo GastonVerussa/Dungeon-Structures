@@ -1,26 +1,16 @@
-package clases.estructuras;
+package estructurasGenerales.propositoEspecifico;
 
 import estructurasGenerales.lineales.Cola;
 import estructurasGenerales.lineales.Lista;
-import estructurasGenerales.propositoEspecifico.NodoAVLMapeoM;
 import utiles.Dato;
-import clases.unidades.Item;
 
-public class TiendaItems {
+public class MapeoAMuchosAVL {
     
     private NodoAVLMapeoM raiz;
     
     //  Crea un árbol sin elementos.
-    public TiendaItems(){
+    public MapeoAMuchosAVL(){
         raiz = null;
-    }
-    
-    public boolean insertar(Item objeto){
-        return asociar(objeto.getPrecio(), objeto);
-    }
-    
-    public boolean insertar(String codigo, String nombre, int precio, int puntosAtk, int puntosDef, int cantCopiasDisp){
-        return asociar(precio, new Item(codigo, nombre, precio, puntosAtk, puntosDef, cantCopiasDisp));
     }
     
     //  Recibe un valor que representa a un elemento del dominio y un segundo valor 
@@ -29,7 +19,7 @@ public class TiendaItems {
     //      donde el segundo término es un conjunto de rangos con un solo valor. 
     //      Si ya existe un par con valorDominio, se agrega valorRango al conjunto de rangos existente.
     //      Si la operación termina con éxito devuelve verdadero y falso en caso contrario.
-    private boolean asociar (Comparable valorDominio, Object valorRango){
+    public boolean asociar (Comparable valorDominio, Object valorRango){
         boolean exito;
         if(this.esVacio()){
             this.raiz = new NodoAVLMapeoM(valorDominio, valorRango);
@@ -88,16 +78,12 @@ public class TiendaItems {
         return exito;
     }
     
-    public boolean eliminar(Item objeto){
-        return desasociar(objeto.getPrecio(), objeto);
-    }
-    
     //  Elimina valorRango del conjunto de rangos asociado a valorDominio. Caso 
     //      especial: si al eliminar valorRango del conjunto este quedara vacío,
     //      debe eliminar el par (valorDominio,{}) del mapeo. Si encuentra el par 
     //      y la operación de eliminación termina con éxito devuelve verdadero y 
     //      falso en caso contrario.
-    private boolean desasociar(Comparable valorDominio, Object valorRango){
+    public boolean desasociar(Comparable valorDominio, Object valorRango){
         
         boolean exito;
         
@@ -306,7 +292,6 @@ public class TiendaItems {
         return hijo;
     }
 
-    /*
     //  Si en el mapeo se encuentra almacenado algún par cuyo dominio es valorDominio, esta operación
     //      devuelve el valor de rango asociado a él. Precondición: valorDominio está en el mapeo (si no existe,
     //      no se puede asegurar el funcionamiento de la operación).
@@ -341,14 +326,12 @@ public class TiendaItems {
         
         return valoresRango;
     }
-    */
-    
+
     //  Devuelve falso si hay al menos un elemento en el árbol y verdadero en caso contrario.
     public boolean esVacio(){
         return raiz == null;
     }
-     
-    /*
+        
     //  Recorre el árbol completo y devuelve una lista ordenada con los elementos del dominio
     //      que se encuentran almacenados en él.
     public Lista obtenerConjuntoDominio(){
@@ -368,8 +351,7 @@ public class TiendaItems {
             obtenerConjuntoRangoAux(nodo.getDerecho(), listaDominio);
         } 
     }
-    */
-    /*
+
     //  Recorre el árbol completo y devuelve una lista con todos los elementos del
     //      rango, pasando por todos los dominios.
     public Lista obtenerConjuntoRango(){
@@ -396,7 +378,7 @@ public class TiendaItems {
             obtenerConjuntoRangoAux(nodo.getDerecho(), listaRango);
         } 
     }
-    */
+    
     public void vaciar(){
         raiz = null;
     }
@@ -405,9 +387,9 @@ public class TiendaItems {
     //      por niveles, de esta forma, al ir insertando nodos en el clon, no será
     //      necesario hacer un rebalance, siendo la manera mas efectiva.
     @Override
-    public TiendaItems clone(){
+    public MapeoAMuchosAVL clone(){
         
-        TiendaItems resultado = new TiendaItems();
+        MapeoAMuchosAVL resultado = new MapeoAMuchosAVL();
         
         //  Si no esta vacía
         if(!this.esVacio()){
@@ -469,105 +451,20 @@ public class TiendaItems {
             resultado = toStringAux(nodo.getIzquierdo());
             
             //  Luego agrego el elemento al String
-            resultado += "\n Altura: " + nodo.getAltura() + ". Items de coste " + nodo.getDominio().toString() + ": { ";
+            resultado += "\n" + nodo.getDominio().toString() + ": { ";
 
             Lista rango = nodo.getRango();
 
             for(int i = 1; i <= rango.longitud(); i++){
-                resultado += ((Item) rango.recuperar(i)).getCodigo() + ", ";
+                resultado += rango.recuperar(i).toString() + ", ";
             }
-            
             //  Saca el ultimo ", "
             resultado = resultado.substring(0, resultado.length() - 2);
-            resultado += " } ";
-            
-            resultado += "Hijos: ";
-            if(nodo.getIzquierdo() != null){
-                resultado += nodo.getIzquierdo().getDominio().toString();
-            }
-            resultado += ", ";
-            if(nodo.getDerecho()!= null){
-                resultado += nodo.getDerecho().getDominio().toString();
-            }
+            resultado += " }";
             
             resultado += toStringAux(nodo.getDerecho());
         } 
         
         return resultado;
-    }
-
-    //  Devuelve una lista ordenada de items con precio menor o igual a monto
-    public String conseguirItemsAccesibles(Comparable limite){
-        return conseguirItemsRangoAux(0, limite, raiz);
-    }
-    
-    //  Devuelve una lista ordenada de items con precio en el intervalo [minimo, maximo]
-    public String conseguirItemsRango(int minimo, int maximo){
-        //  Devuelve los items entre el rango de precio minimo y maximo
-        return conseguirItemsRangoAux(minimo, maximo, raiz);
-    }
-    
-    //  Funcion privada para conseguirItemsAccesibles() y conseguirItemsRango(), recorre en inorden los nodos
-    //      con menor precio al limite
-    private String conseguirItemsRangoAux(Comparable minimo, Comparable maximo, NodoAVLMapeoM nodo){
-        
-        String resultado = "";
-        
-        if(nodo != null){
-            //  Variable para referenciar al elemento del nodo facilmente
-            Comparable aux = nodo.getDominio();
-            //  Revisamos el subarbol del hijo izquierdo
-            //  Si el elemento del nodo es mayor o igual al limite superior del intervalo, no 
-            //      revisamos el hijo derecho, ya que todos sus elementos serán mayores.
-            if(aux.compareTo(minimo) > 0){
-                //  De no ser mayor, revisamos el subarbol del hijo derecho
-                resultado += conseguirItemsRangoAux(minimo, maximo, nodo.getIzquierdo());
-            }
-            //  Si el dominio del nodo es menor al limite, agregamos sus rangos a la lista
-            if(aux.compareTo(minimo) >= 0 && aux.compareTo(maximo) <= 0){
-                resultado += "Items de coste $" + aux + ": {";
-                //  Lo insertamos al final de la lista
-                Lista rango = nodo.getRango();
-                for(int i = 1; i <= rango.longitud() - 1; i++){
-                    resultado += ((Item) rango.recuperar(i)).getCodigo() + ", ";
-                }
-                resultado += ((Item) rango.recuperar(rango.longitud())).getCodigo() + "} \n";
-            }
-            //  Si el elemento del nodo es mayor o igual al limite superior del intervalo, no 
-            //      revisamos el hijo derecho, ya que todos sus elementos serán mayores.
-            if(aux.compareTo(maximo) < 0){
-                //  De no ser mayor, revisamos el subarbol del hijo derecho
-                resultado += conseguirItemsRangoAux(minimo, maximo, nodo.getDerecho());
-            }
-        }
-        
-        return resultado;
-    }
-    
-    //  Devuelve una lista con todos los items que solo hay una copia
-    public String recuperarItemsUnicos(){
-        return recuperarItemsUnicosAux(raiz);
-    }
-    
-    //  Funciona privada para recuperar items unicos
-    private String recuperarItemsUnicosAux(NodoAVLMapeoM nodo){
-        
-        String stringItems = "";
-        
-        //  Si el nodo existe
-        if(nodo != null){
-            //  Llena la lista en Inorden
-            stringItems += recuperarItemsUnicosAux(nodo.getIzquierdo());
-            Lista rangoNodo = nodo.getRango();
-            for(int i = 1; i <= rangoNodo.longitud(); i++){
-                Item elemento = (Item) rangoNodo.recuperar(i);
-                if(elemento.getCantCopiasDisp() == 1){
-                    stringItems += ", " + elemento.getCodigo() ;
-                }
-            }
-            stringItems += recuperarItemsUnicosAux(nodo.getDerecho());
-        }
-        
-        return stringItems;
     }
 }

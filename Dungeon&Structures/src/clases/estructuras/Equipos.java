@@ -1,8 +1,8 @@
 package clases.estructuras;
 
 import clases.unidades.Equipo;
-import lineales.dinamicas.Lista;
-import propositoEspecifico.DiccionarioHash;
+import estructurasGenerales.lineales.Lista;
+import estructurasGenerales.propositoEspecifico.DiccionarioHash;
 
 public class Equipos {
     

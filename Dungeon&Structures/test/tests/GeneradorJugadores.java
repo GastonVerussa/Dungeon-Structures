@@ -9,9 +9,8 @@ import java.io.PrintWriter;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import lineales.dinamicas.Lista;
-import propositoEspecifico.Conjunto;
-import propositoEspecifico.DiccionarioAVL;
+import estructurasGenerales.lineales.Lista;
+import estructurasGenerales.propositoEspecifico.Conjunto;
 
 public class GeneradorJugadores {
     
@@ -23,7 +22,7 @@ public class GeneradorJugadores {
     private static final String[] profesiones = {"gladiador", "espadachin", "estratega", "explorador", "mago", "hechicero", "barbaro", "picaro"};
     private static final String[] adjetivos = {"valiente", "cobarde", "experto", "novato", "despiadado", "noble", "heroico"};
     
-    private static final String direccion = System.getProperty("user.dir") + "\\";
+    private static final String DIRECCION = System.getProperty("user.dir") + "\\";
     
     public static void main(String[] args){
         
@@ -92,7 +91,7 @@ public class GeneradorJugadores {
         //  FORMATO DE JUGADORES: J: nombre; tipo; categoria; dinero; lista de items
         //  FORMATO DE lista de items: <codigoItem, codigoItem, ... >
         
-        PrintWriter salida = new PrintWriter(new FileOutputStream(direccion + "jugadores.txt"));
+        PrintWriter salida = new PrintWriter(new FileOutputStream(DIRECCION + "jugadores.txt"));
         
         final String[] categorias = {"Profesional", "Aficionado", "Novato"};
         final String[] tipos = {"Guerrero", "Defensor"};
@@ -145,7 +144,7 @@ public class GeneradorJugadores {
             System.out.println("\n------------------");
             System.out.println("Cargando items");
             System.out.println("--------------------\n");
-            entrada = new BufferedReader(new FileReader(direccion + "items.txt"));
+            entrada = new BufferedReader(new FileReader(DIRECCION + "items.txt"));
             String cadena = null;
             PrintWriter salida = null;
             
@@ -190,7 +189,7 @@ public class GeneradorJugadores {
         
         PrintWriter salida;
                 
-        salida = new PrintWriter(new FileOutputStream(direccion + "items.txt"));
+        salida = new PrintWriter(new FileOutputStream(DIRECCION + "items.txt"));
         
         //  FORMATO DE ITEMS: I: codigo; nombre; precio; puntos de ataque; puntos de defensa; copias disponibles
         

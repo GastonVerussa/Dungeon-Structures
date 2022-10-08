@@ -36,18 +36,243 @@ Jugadores:
 
 -------------------------------------
 
+Tabla AVL de jugadores: 
+ Altura: 6. Jugador Nehnid, el hechicero cobarde. Hijos: Buo, el gladiador heroico , Olban, el espadachin experto
+ Altura: 5. Jugador Buo, el gladiador heroico. Hijos: Bragrem, el hechicero noble , Eised, el barbaro heroico
+ Altura: 4. Jugador Olban, el espadachin experto. Hijos: Nucrol, el barbaro heroico , Stam, el explorador novato
+ Altura: 3. Jugador Bragrem, el hechicero noble. Hijos: Bragrem, el explorador experto , Buo, el espadachin experto
+ Altura: 4. Jugador Eised, el barbaro heroico. Hijos: Chiang, el espadachin despiadado , Gler, el gladiador despiadado
+ Altura: 3. Jugador Nucrol, el barbaro heroico. Hijos: Nehnid, el hechicero noble , Nucrol, el hechicero noble
+ Altura: 3. Jugador Stam, el explorador novato. Hijos: Stam, el estratega cobarde , Stam, el hechicero experto
+ Altura: 2. Jugador Bragrem, el explorador experto. Hijos: Bragrem, el espadachin experto , Bragrem, el gladiador despiadado
+ Altura: 2. Jugador Buo, el espadachin experto. Hijos: Bragrem, el mago novato , Buo, el gladiador experto
+ Altura: 3. Jugador Chiang, el espadachin despiadado. Hijos: Buo, el mago despiadado , Chiang, el hechicero cobarde
+ Altura: 3. Jugador Gler, el gladiador despiadado. Hijos: Eised, el picaro noble , Nehnid, el estratega experto
+ Altura: 1. Jugador Nehnid, el hechicero noble. Hijos:  , Nehnid, el picaro novato
+ Altura: 2. Jugador Nucrol, el hechicero noble. Hijos: Nucrol, el espadachin noble , Olban, el barbaro novato
+ Altura: 2. Jugador Stam, el estratega cobarde. Hijos: Olban, el espadachin valiente , Stam, el explorador cobarde
+ Altura: 2. Jugador Stam, el hechicero experto. Hijos: Stam, el gladiador novato , Stam, el picaro despiadado
+ Altura: 1. Jugador Bragrem, el espadachin experto. Hijos: Bragrem, el barbaro cobarde , Bragrem, el espadachin heroico
+ Altura: 1. Jugador Bragrem, el gladiador despiadado. Hijos: Bragrem, el explorador valiente , Bragrem, el gladiador experto
+ Altura: 1. Jugador Bragrem, el mago novato. Hijos: Bragrem, el hechicero novato , 
+ Altura: 1. Jugador Buo, el gladiador experto. Hijos: Buo, el espadachin novato , 
+ Altura: 2. Jugador Buo, el mago despiadado. Hijos: Buo, el hechicero valiente , Buo, el picaro valiente
+ Altura: 2. Jugador Chiang, el hechicero cobarde. Hijos: Chiang, el espadachin heroico , Chiang, el mago heroico
+ Altura: 2. Jugador Eised, el picaro noble. Hijos: Eised, el picaro despiadado , Gler, el espadachin cobarde
+ Altura: 2. Jugador Nehnid, el estratega experto. Hijos: Gler, el hechicero valiente , Nehnid, el explorador despiadado
+ Altura: 0. Jugador Nehnid, el picaro novato. Hijos:  , 
+ Altura: 1. Jugador Nucrol, el espadachin noble. Hijos: Nucrol, el espadachin experto , Nucrol, el estratega despiadado
+ Altura: 1. Jugador Olban, el barbaro novato. Hijos: Nucrol, el picaro noble , 
+ Altura: 1. Jugador Olban, el espadachin valiente. Hijos:  , Olban, el mago cobarde
+ Altura: 1. Jugador Stam, el explorador cobarde. Hijos:  , Stam, el explorador noble
+ Altura: 0. Jugador Stam, el gladiador novato. Hijos:  , 
+ Altura: 1. Jugador Stam, el picaro despiadado. Hijos: Stam, el mago experto , Stam, el picaro noble
+ Altura: 0. Jugador Bragrem, el barbaro cobarde. Hijos:  , 
+ Altura: 0. Jugador Bragrem, el espadachin heroico. Hijos:  , 
+ Altura: 0. Jugador Bragrem, el explorador valiente. Hijos:  , 
+ Altura: 0. Jugador Bragrem, el gladiador experto. Hijos:  , 
+ Altura: 0. Jugador Bragrem, el hechicero novato. Hijos:  , 
+ Altura: 0. Jugador Buo, el espadachin novato. Hijos:  , 
+ Altura: 0. Jugador Buo, el hechicero valiente. Hijos:  , 
+ Altura: 1. Jugador Buo, el picaro valiente. Hijos: Buo, el picaro despiadado , 
+ Altura: 1. Jugador Chiang, el espadachin heroico. Hijos:  , Chiang, el estratega experto
+ Altura: 1. Jugador Chiang, el mago heroico. Hijos: Chiang, el mago despiadado , Chiang, el picaro heroico
+ Altura: 1. Jugador Eised, el picaro despiadado. Hijos: Eised, el gladiador despiadado , Eised, el picaro experto
+ Altura: 1. Jugador Gler, el espadachin cobarde. Hijos: Gler, el barbaro heroico , Gler, el explorador noble
+ Altura: 1. Jugador Gler, el hechicero valiente. Hijos:  , Gler, el picaro valiente
+ Altura: 0. Jugador Nehnid, el explorador despiadado. Hijos:  , 
+ Altura: 0. Jugador Nucrol, el espadachin experto. Hijos:  , 
+ Altura: 0. Jugador Nucrol, el estratega despiadado. Hijos:  , 
+ Altura: 0. Jugador Nucrol, el picaro noble. Hijos:  , 
+ Altura: 0. Jugador Olban, el mago cobarde. Hijos:  , 
+ Altura: 0. Jugador Stam, el explorador noble. Hijos:  , 
+ Altura: 0. Jugador Stam, el mago experto. Hijos:  , 
+ Altura: 0. Jugador Stam, el picaro noble. Hijos:  , 
+ Altura: 0. Jugador Buo, el picaro despiadado. Hijos:  , 
+ Altura: 0. Jugador Chiang, el estratega experto. Hijos:  , 
+ Altura: 0. Jugador Chiang, el mago despiadado. Hijos:  , 
+ Altura: 0. Jugador Chiang, el picaro heroico. Hijos:  , 
+ Altura: 0. Jugador Eised, el gladiador despiadado. Hijos:  , 
+ Altura: 0. Jugador Eised, el picaro experto. Hijos:  , 
+ Altura: 0. Jugador Gler, el barbaro heroico. Hijos:  , 
+ Altura: 0. Jugador Gler, el explorador noble. Hijos:  , 
+ Altura: 0. Jugador Gler, el picaro valiente. Hijos:  , 
 
- {Nehnid, el hechicero cobarde, (Nehnid, el hechicero cobarde: Guerrero, Aficionado, $100, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} --> {Buo, el gladiador heroico, (Buo, el gladiador heroico: Guerrero, Aficionado, $150, Items: [maza runica del bosque], Salud: 100, Derrotas: 0, Victorias: 0)} , {Olban, el espadachin experto, (Olban, el espadachin experto: Defensor, Profesional, $0, Items: [arco resplandeciente destructora, ballesta espectral del bosque], Salud: 100, Derrotas: 0, Victorias: 0)}
- {Buo, el gladiador heroico, (Buo, el gladiador heroico: Guerrero, Aficionado, $150, Items: [maza runica del bosque], Salud: 100, Derrotas: 0, Victorias: 0)} --> {Bragrem, el hechicero noble, (Bragrem, el hechicero noble: Guerrero, Profesional, $1450, Items: [escudo bipolar elfica], Salud: 100, Derrotas: 0, Victorias: 0)} , {Eised, el barbaro heroico, (Eised, el barbaro heroico: Guerrero, Aficionado, $1050, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)}
- {Olban, el espadachin experto, (Olban, el espadachin experto: Defensor, Profesional, $0, Items: [arco resplandeciente destructora, ballesta espectral del bosque], Salud: 100, Derrotas: 0, Victorias: 0)} --> {Nucrol, el barbaro heroico, (Nucrol, el barbaro heroico: Defensor, Aficionado, $1450, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} , {Stam, el explorador novato, (Stam, el explorador novato: Guerrero, Novato, $750, Items: [casco resplandeciente elfica, escudo bipolar elfica], Salud: 100, Derrotas: 0, Victorias: 0)}
- {Bragrem, el hechicero noble, (Bragrem, el hechicero noble: Guerrero, Profesional, $1450, Items: [escudo bipolar elfica], Salud: 100, Derrotas: 0, Victorias: 0)} --> {Bragrem, el explorador experto, (Bragrem, el explorador experto: Guerrero, Profesional, $300, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} , {Buo, el espadachin experto, (Buo, el espadachin experto: Defensor, Aficionado, $350, Items: [espada legendaria de las profunidades], Salud: 100, Derrotas: 0, Victorias: 0)}
- {Eised, el barbaro heroico, (Eised, el barbaro heroico: Guerrero, Aficionado, $1050, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} --> {Chiang, el espadachin despiadado, (Chiang, el espadachin despiadado: Defensor, Aficionado, $1700, Items: [ballesta espectral del bosque, arco resplandeciente destructora], Salud: 100, Derrotas: 0, Victorias: 0)} , {Gler, el gladiador despiadado, (Gler, el gladiador despiadado: Defensor, Aficionado, $550, Items: [casco resplandeciente elfica, maza runica del bosque], Salud: 100, Derrotas: 0, Victorias: 0)}
- {Nucrol, el barbaro heroico, (Nucrol, el barbaro heroico: Defensor, Aficionado, $1450, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} --> {Nehnid, el hechicero noble, (Nehnid, el hechicero noble: Defensor, Aficionado, $850, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} , {Nucrol, el hechicero noble, (Nucrol, el hechicero noble: Guerrero, Aficionado, $350, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)}
- {Stam, el explorador novato, (Stam, el explorador novato: Guerrero, Novato, $750, Items: [casco resplandeciente elfica, escudo bipolar elfica], Salud: 100, Derrotas: 0, Victorias: 0)} --> {Stam, el estratega cobarde, (Stam, el estratega cobarde: Guerrero, Novato, $1050, Items: [espada plateada enana], Salud: 100, Derrotas: 0, Victorias: 0)} , {Stam, el hechicero experto, (Stam, el hechicero experto: Defensor, Profesional, $1150, Items: [espada legendaria de las profunidades, hacha plateada de la tormenta], Salud: 100, Derrotas: 0, Victorias: 0)}
- {Bragrem, el explorador experto, (Bragrem, el explorador experto: Guerrero, Profesional, $300, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} --> {Bragrem, el espadachin experto, (Bragrem, el espadachin experto: Guerrero, Aficionado, $1000, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} , {Bragrem, el gladiador despiadado, (Bragrem, el gladiador despiadado: Guerrero, Aficionado, $750, Items: [casco oscura elfica], Salud: 100, Derrotas: 0, Victorias: 0)}
- {Buo, el espadachin experto, (Buo, el espadachin experto: Defensor, Aficionado, $350, Items: [espada legendaria de las profunidades], Salud: 100, Derrotas: 0, Victorias: 0)} --> {Bragrem, el mago novato, (Bragrem, el mago novato: Defensor, Novato, $900, Items: [espada plateada enana, ballesta legendaria enana], Salud: 100, Derrotas: 0, Victorias: 0)} , {Buo, el gladiador experto, (Buo, el gladiador experto: Defensor, Aficionado, $1350, Items: [arco resplandeciente destructora], Salud: 100, Derrotas: 0, Victorias: 0)}
- {Chiang, el espadachin despiadado, (Chiang, el espadachin despiadado: Defensor, Aficionado, $1700, Items: [ballesta espectral del bosque, arco resplandeciente destructora], Salud: 100, Derrotas: 0, Victorias: 0)} --> {Buo, el mago despiadado, (Buo, el mago despiadado: Defensor, Aficionado, $1800, Items: [maza runica del bosque, escudo bipolar enana, hacha espectral del desierto, espada oscura destructora], Salud: 100, Derrotas: 0, Victorias: 0)} , {Chiang, el hechicero cobarde, (Chiang, el hechicero cobarde: Guerrero, Aficionado, $800, Items: [espada plateada enana, casco runica del bosque, ballesta legendaria enana], Salud: 100, Derrotas: 0, Victorias: 0)}
- {Gler, el gladiador despiadado, (Gler, el gladiador despiadado: Defensor, Aficionado, $550, Items: [casco resplandeciente elfica, maza runica del bosque], Salud: 100, Derrotas: 0, Victorias: 0)} --> {Eised, el picaro noble, (Eised, el picaro noble: Defensor, Aficionado, $550, Items: [arco resplandeciente destructora, escudo bipolar elfica, arco plateada enana, ballesta bipolar de la tormenta], Salud: 100, Derrotas: 0, Victorias: 0)} , {Nehnid, el estratega experto, (Nehnid, el estratega experto: Defensor, Profesional, $300, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)}
- {Nehnid, el hechicero noble, (Nehnid, el hechicero noble: Defensor, Aficionado, $850, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} -->  , {Nehnid, el picaro novato, (Nehnid, el picaro novato: Guerrero, Aficionado, $500, Items: [ballesta legendaria enana, hacha runica enana, ballesta bipolar de la tormenta, casco runica del bosque], Salud: 100, Derrotas: 0, Victorias: 0)}
- {Nucrol, el hechicero noble, (Nucrol, el hechicero noble: Guerrero, Aficionado, $350, Items: sin items, Salud: 100, Derrotas: 0, Victorias: 0)} --> {Nucrol, el espadachin noble, (Nucrol, el espadachin noble: Guerrero, Profesional, $850, Items: [hacha plateada de la tormenta, escudo bipolar enana, casco resplandeciente elfica], Salud: 100, Derrotas: 0, Victorias: 0)} , {Olban, el barbaro novato, (Olban, el barbaro novato: Defensor, Aficionado, $1450, Items: [maza runica del bosque, arco plateada enana, escudo bipolar enana, casco oscura elfica], Salud: 100, Derrotas: 0, Victorias: 0)}
- {Stam, el estratega cobarde, (Stam, el estratega cobarde: Guerrero, Novato, $1050, Items: [espada plateada enana
+--------------------------------------------------------------------------
+
+
+ Mapa: 
+
+-------------------------------------
+
+Formato del mapa. <Locacion> : {<Locacion_Destino>, <Distancia_KM>} -  ... 
+
+ Montania:  { Llanura, 55 } - { Pantano, 15 } - { Bosque, 15 } -
+ Muelle:  { Lago, 40 } - { Bosque, 20 } - { Llanura, 25 } -
+ Isla:  { Bosque, 45 } - { Lago, 30 } - { Pantano, 50 } -
+ Llanura:  { Montania, 55 } - { Muelle, 25 } - { Lago, 5 } -
+ Lago:  { Rio, 25 } - { Muelle, 40 } - { Llanura, 5 } - { Isla, 30 } -
+ Rio:  { Bosque, 20 } - { Lago, 25 } - { Pantano, 10 } -
+ Pantano:  { Montania, 15 } - { Isla, 50 } - { Rio, 10 } -
+ Bosque:  { Rio, 20 } - { Isla, 45 } - { Muelle, 20 } - { Montania, 15 } -
+
+--------------------------------------------------------------------------
+
+
+ Cola de espera: 
+
+-------------------------------------
+
+No hay jugadores esperando a formar equipo
+
+--------------------------------------------------------------------------
+
+
+ Equipos: 
+
+-------------------------------------
+
+No hay equipos formados
+
+--------------------------------------------------------------------------
+
+
+
+
+-------------------------------------
+
+Estado del sistema luego al finalizar la ejecucion:
+
+-------------------------------------
+
+Items en la tienda 
+
+-------------------------------------
+
+
+ Altura: 0. Items de coste 60: { E019 } Hijos: , 
+ Altura: 1. Items de coste 80: { E010 } Hijos: 60, 90
+ Altura: 0. Items de coste 90: { E012 } Hijos: , 
+ Altura: 2. Items de coste 120: { E011, E004 } Hijos: 80, 160
+ Altura: 0. Items de coste 150: { E018 } Hijos: , 
+ Altura: 1. Items de coste 160: { E007, E003 } Hijos: 150, 
+ Altura: 4. Items de coste 165: { E008, E002 } Hijos: 120, 220
+ Altura: 0. Items de coste 180: { E009 } Hijos: , 
+ Altura: 1. Items de coste 195: { E005 } Hijos: 180, 
+ Altura: 3. Items de coste 220: { E017, E014, E013 } Hijos: 195, 300
+ Altura: 0. Items de coste 240: { E016, E015 } Hijos: , 
+ Altura: 1. Items de coste 260: { E001 } Hijos: 240, 270
+ Altura: 0. Items de coste 270: { E020 } Hijos: , 
+ Altura: 2. Items de coste 300: { E006 } Hijos: 260, 800
+ Altura: 0. Items de coste 600: { E022 } Hijos: , 
+ Altura: 1. Items de coste 800: { E021 } Hijos: 600, 1000
+ Altura: 0. Items de coste 1000: { E023 } Hijos: , 
+
+--------------------------------------------------------------------------
+
+
+Jugadores: 
+
+-------------------------------------
+
+Tabla AVL de jugadores: 
+ Altura: 6. Jugador Nehnid, el hechicero cobarde. Hijos: Buo, el gladiador heroico , Olban, el espadachin experto
+ Altura: 5. Jugador Buo, el gladiador heroico. Hijos: Bragrem, el hechicero noble , Eised, el barbaro heroico
+ Altura: 4. Jugador Olban, el espadachin experto. Hijos: Nucrol, el barbaro heroico , Stam, el explorador novato
+ Altura: 3. Jugador Bragrem, el hechicero noble. Hijos: Bragrem, el explorador experto , Buo, el espadachin experto
+ Altura: 4. Jugador Eised, el barbaro heroico. Hijos: Chiang, el espadachin despiadado , Gler, el gladiador despiadado
+ Altura: 3. Jugador Nucrol, el barbaro heroico. Hijos: Nehnid, el hechicero noble , Nucrol, el hechicero noble
+ Altura: 3. Jugador Stam, el explorador novato. Hijos: Stam, el estratega cobarde , Stam, el hechicero experto
+ Altura: 2. Jugador Bragrem, el explorador experto. Hijos: Bragrem, el espadachin experto , Bragrem, el gladiador despiadado
+ Altura: 2. Jugador Buo, el espadachin experto. Hijos: Bragrem, el mago novato , Buo, el gladiador experto
+ Altura: 3. Jugador Chiang, el espadachin despiadado. Hijos: Buo, el mago despiadado , Chiang, el hechicero cobarde
+ Altura: 3. Jugador Gler, el gladiador despiadado. Hijos: Eised, el picaro noble , Nehnid, el estratega experto
+ Altura: 1. Jugador Nehnid, el hechicero noble. Hijos:  , Nehnid, el picaro novato
+ Altura: 2. Jugador Nucrol, el hechicero noble. Hijos: Nucrol, el espadachin noble , Olban, el barbaro novato
+ Altura: 2. Jugador Stam, el estratega cobarde. Hijos: Olban, el espadachin valiente , Stam, el explorador cobarde
+ Altura: 2. Jugador Stam, el hechicero experto. Hijos: Stam, el gladiador novato , Stam, el picaro despiadado
+ Altura: 1. Jugador Bragrem, el espadachin experto. Hijos: Bragrem, el barbaro cobarde , Bragrem, el espadachin heroico
+ Altura: 1. Jugador Bragrem, el gladiador despiadado. Hijos: Bragrem, el explorador valiente , Bragrem, el gladiador experto
+ Altura: 1. Jugador Bragrem, el mago novato. Hijos: Bragrem, el hechicero novato , 
+ Altura: 1. Jugador Buo, el gladiador experto. Hijos: Buo, el espadachin novato , 
+ Altura: 2. Jugador Buo, el mago despiadado. Hijos: Buo, el hechicero valiente , Buo, el picaro valiente
+ Altura: 2. Jugador Chiang, el hechicero cobarde. Hijos: Chiang, el espadachin heroico , Chiang, el mago heroico
+ Altura: 2. Jugador Eised, el picaro noble. Hijos: Eised, el picaro despiadado , Gler, el espadachin cobarde
+ Altura: 2. Jugador Nehnid, el estratega experto. Hijos: Gler, el hechicero valiente , Nehnid, el explorador despiadado
+ Altura: 0. Jugador Nehnid, el picaro novato. Hijos:  , 
+ Altura: 1. Jugador Nucrol, el espadachin noble. Hijos: Nucrol, el espadachin experto , Nucrol, el estratega despiadado
+ Altura: 1. Jugador Olban, el barbaro novato. Hijos: Nucrol, el picaro noble , 
+ Altura: 1. Jugador Olban, el espadachin valiente. Hijos:  , Olban, el mago cobarde
+ Altura: 1. Jugador Stam, el explorador cobarde. Hijos:  , Stam, el explorador noble
+ Altura: 0. Jugador Stam, el gladiador novato. Hijos:  , 
+ Altura: 1. Jugador Stam, el picaro despiadado. Hijos: Stam, el mago experto , Stam, el picaro noble
+ Altura: 0. Jugador Bragrem, el barbaro cobarde. Hijos:  , 
+ Altura: 0. Jugador Bragrem, el espadachin heroico. Hijos:  , 
+ Altura: 0. Jugador Bragrem, el explorador valiente. Hijos:  , 
+ Altura: 0. Jugador Bragrem, el gladiador experto. Hijos:  , 
+ Altura: 0. Jugador Bragrem, el hechicero novato. Hijos:  , 
+ Altura: 0. Jugador Buo, el espadachin novato. Hijos:  , 
+ Altura: 0. Jugador Buo, el hechicero valiente. Hijos:  , 
+ Altura: 1. Jugador Buo, el picaro valiente. Hijos: Buo, el picaro despiadado , 
+ Altura: 1. Jugador Chiang, el espadachin heroico. Hijos:  , Chiang, el estratega experto
+ Altura: 1. Jugador Chiang, el mago heroico. Hijos: Chiang, el mago despiadado , Chiang, el picaro heroico
+ Altura: 1. Jugador Eised, el picaro despiadado. Hijos: Eised, el gladiador despiadado , Eised, el picaro experto
+ Altura: 1. Jugador Gler, el espadachin cobarde. Hijos: Gler, el barbaro heroico , Gler, el explorador noble
+ Altura: 1. Jugador Gler, el hechicero valiente. Hijos:  , Gler, el picaro valiente
+ Altura: 0. Jugador Nehnid, el explorador despiadado. Hijos:  , 
+ Altura: 0. Jugador Nucrol, el espadachin experto. Hijos:  , 
+ Altura: 0. Jugador Nucrol, el estratega despiadado. Hijos:  , 
+ Altura: 0. Jugador Nucrol, el picaro noble. Hijos:  , 
+ Altura: 0. Jugador Olban, el mago cobarde. Hijos:  , 
+ Altura: 0. Jugador Stam, el explorador noble. Hijos:  , 
+ Altura: 0. Jugador Stam, el mago experto. Hijos:  , 
+ Altura: 0. Jugador Stam, el picaro noble. Hijos:  , 
+ Altura: 0. Jugador Buo, el picaro despiadado. Hijos:  , 
+ Altura: 0. Jugador Chiang, el estratega experto. Hijos:  , 
+ Altura: 0. Jugador Chiang, el mago despiadado. Hijos:  , 
+ Altura: 0. Jugador Chiang, el picaro heroico. Hijos:  , 
+ Altura: 0. Jugador Eised, el gladiador despiadado. Hijos:  , 
+ Altura: 0. Jugador Eised, el picaro experto. Hijos:  , 
+ Altura: 0. Jugador Gler, el barbaro heroico. Hijos:  , 
+ Altura: 0. Jugador Gler, el explorador noble. Hijos:  , 
+ Altura: 0. Jugador Gler, el picaro valiente. Hijos:  , 
+
+--------------------------------------------------------------------------
+
+
+ Mapa: 
+
+-------------------------------------
+
+Formato del mapa. <Locacion> : {<Locacion_Destino>, <Distancia_KM>} -  ... 
+
+ Montania:  { Llanura, 55 } - { Pantano, 15 } - { Bosque, 15 } -
+ Muelle:  { Lago, 40 } - { Bosque, 20 } - { Llanura, 25 } -
+ Isla:  { Bosque, 45 } - { Lago, 30 } - { Pantano, 50 } -
+ Llanura:  { Montania, 55 } - { Muelle, 25 } - { Lago, 5 } -
+ Lago:  { Rio, 25 } - { Muelle, 40 } - { Llanura, 5 } - { Isla, 30 } -
+ Rio:  { Bosque, 20 } - { Lago, 25 } - { Pantano, 10 } -
+ Pantano:  { Montania, 15 } - { Isla, 50 } - { Rio, 10 } -
+ Bosque:  { Rio, 20 } - { Isla, 45 } - { Muelle, 20 } - { Montania, 15 } -
+
+--------------------------------------------------------------------------
+
+
+ Cola de espera: 
+
+-------------------------------------
+
+No hay jugadores esperando a formar equipo
+
+--------------------------------------------------------------------------
+
+
+ Equipos: 
+
+-------------------------------------
+
+No hay equipos formados
+
+--------------------------------------------------------------------------
+
+
