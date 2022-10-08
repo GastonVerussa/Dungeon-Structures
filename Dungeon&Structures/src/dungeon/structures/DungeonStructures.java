@@ -308,8 +308,8 @@ public class DungeonStructures {
                             System.out.print("Tipo: ");
                             tipo = Character.toUpperCase(TecladoIn.readLineNonwhiteChar());
                         }
-                        System.out.print("Tipo de jugador de " + nombre + " modificado de " + nombreTipo(jugador.getTipo()) + " a " + nombreTipo(tipo));
-                        salida.print("Tipo de jugador de " + nombre + " modificado de " + nombreTipo(jugador.getTipo()) + " a " + nombreTipo(tipo));
+                        System.out.println("Tipo de jugador de " + nombre + " modificado de " + nombreTipo(jugador.getTipo()) + " a " + nombreTipo(tipo));
+                        salida.println("Tipo de jugador de " + nombre + " modificado de " + nombreTipo(jugador.getTipo()) + " a " + nombreTipo(tipo));
                         jugador.setTipo(tipo);
                         break;
                     case 2:
@@ -320,8 +320,8 @@ public class DungeonStructures {
                             System.out.print("Categoria: ");
                             categoria = Character.toUpperCase(TecladoIn.readLineNonwhiteChar());
                         }
-                        System.out.print("Categoria de jugador de " + nombre + " modificado de " + nombreCategoria(jugador.getCategoria()) + " a " + nombreCategoria(categoria));
-                        salida.print("Categoria de jugador de " + nombre + " modificado de " + nombreCategoria(jugador.getCategoria()) + " a " + nombreCategoria(categoria));
+                        System.out.println("Categoria de jugador de " + nombre + " modificado de " + nombreCategoria(jugador.getCategoria()) + " a " + nombreCategoria(categoria));
+                        salida.println("Categoria de jugador de " + nombre + " modificado de " + nombreCategoria(jugador.getCategoria()) + " a " + nombreCategoria(categoria));
                         jugador.setCategoria(categoria);
                         break;
                     case 3:
@@ -335,8 +335,8 @@ public class DungeonStructures {
                         System.out.println("Inserte cantidad de dinero a restar: ");
                         int perdida = TecladoIn.readLineInt();
                         jugador.modificarDinero(perdida * (-1));
-                        System.out.print("El jugador " + nombre + " ha perdido $" + perdida);
-                        salida.print("El jugador " + nombre + " ha perdido $" + perdida);
+                        System.out.println("El jugador " + nombre + " ha perdido $" + perdida);
+                        salida.println("El jugador " + nombre + " ha perdido $" + perdida);
                         break;
                     case 5:
                         System.out.println("Ingrese codigo de item a agregar: ");
