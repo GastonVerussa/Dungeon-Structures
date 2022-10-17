@@ -490,7 +490,7 @@ public class TiendaItems {
             }
             
             //  Luego agrego a los hijos
-            resultado = toStringAux(nodo.getIzquierdo());
+            resultado += toStringAux(nodo.getIzquierdo());
             
             resultado += toStringAux(nodo.getDerecho());
         } 
