@@ -465,10 +465,9 @@ public class TiendaItems {
         
         //  Si el nodo existe
         if(nodo != null){
-            //  Llena la lista en Inorden
-            resultado = toStringAux(nodo.getIzquierdo());
+            //  Llena la lista en Preorden
             
-            //  Luego agrego el elemento al String
+            //  Agrego el elemento al String
             resultado += "\n Altura: " + nodo.getAltura() + ". Items de coste " + nodo.getDominio().toString() + ": { ";
 
             Lista rango = nodo.getRango();
@@ -489,6 +488,9 @@ public class TiendaItems {
             if(nodo.getDerecho()!= null){
                 resultado += nodo.getDerecho().getDominio().toString();
             }
+            
+            //  Luego agrego a los hijos
+            resultado = toStringAux(nodo.getIzquierdo());
             
             resultado += toStringAux(nodo.getDerecho());
         } 

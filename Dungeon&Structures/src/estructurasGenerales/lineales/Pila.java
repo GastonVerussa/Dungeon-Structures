@@ -69,25 +69,18 @@ public class Pila {
         
         // Se crea una pilaFinal que será la que se devuelva y una auxiliar, que
         //      servirá en el proceso explicado a continuación
-        Pila pilaFinal = new Pila();
-        Pila pilaAux = new Pila();
+        Pila resultado = new Pila();
         
-        //Se desapilan los objetos y apilan en la pila auxiliar, quedando todos
-        //      en el orden inverso al original
-        while(!this.esVacia()){
-            pilaAux.apilar(this.obtenerTope());
-            this.desapilar();
+        cloneAux(tope, resultado);
+        
+        return resultado;
+    }
+    
+    private void cloneAux(Nodo nodoActual, Pila resultado){
+        if(nodoActual != null){
+            cloneAux(nodoActual.getEnlace(), resultado);
+            resultado.apilar(nodoActual.getElem());
         }
-        
-        // Al desapilarlo y apilarlo de nuevo vuelven a quedar en su orden original
-        //      Por lo que se lo pasa a la pila final y devuelve a la original.
-        while(!pilaAux.esVacia()){
-            pilaFinal.apilar(pilaAux.obtenerTope());
-            this.apilar(pilaAux.obtenerTope());
-            pilaAux.desapilar();
-        }
-        
-        return pilaFinal;
     }
     
     // Devuelve una cadena de caracteres formada por todos los elementos de la pila 

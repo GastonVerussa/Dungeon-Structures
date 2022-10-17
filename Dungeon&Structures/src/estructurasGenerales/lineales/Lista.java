@@ -161,20 +161,16 @@ public class Lista {
         //  Nueva Lista que se retorna al final
         Lista resultado = new Lista();
         
-        //  Variables para recorrer la estructura
-        Nodo aux = cabecera;
-        int posAux = 1;
-        
-        //  Recorre toda la estructura
-        while(aux != null){
-            //  Agrega el elemento del nodo a la lista en la posicion correspondiente
-            resultado.insertar(aux.getElem(), posAux);
-            //  Aumenta su posicion y pasa al siguiente
-            posAux++;
-            aux = aux.getEnlace();
-        }
+        cloneAux(cabecera, resultado);
         
         return resultado;
+    }
+    
+    private void cloneAux(Nodo nodoActual, Lista nuevaLista){
+        if(nodoActual != null){
+            cloneAux(nodoActual.getEnlace(), nuevaLista);
+            nuevaLista.insertar(nodoActual.getElem(), 1);
+        }
     }
 
     //  Crea y devuelve una cadena de caracteres formada por todos los elementos de la lista para poder
@@ -212,5 +208,22 @@ public class Lista {
         }
         
         return resultado;
+    }
+    
+    //  Vacia la lista pasado como parametro y luego le copia todos los elementos para
+    //      que sea identica a la lista this. Orden(N)
+    public void pasarElementos(Lista resultado){
+        resultado.vaciar();
+        pasarElementosAux(cabecera, resultado);
+    }
+    
+    //  Funcion privada recursiva para copiar la lista, avanza hasta el final y luego
+    //      los ingresa en el sentido contrario. De esta forma, puede insertar con pos
+    //      siempre en 1, teniendo Orden(1) la insercion de esta forma.
+    private void pasarElementosAux(Nodo nodoActual, Lista resulado){
+        if(nodoActual != null){
+            pasarElementosAux(nodoActual.getEnlace(), resulado);
+            resulado.insertar(nodoActual.getElem(), 1);
+        }
     }
 }

@@ -1,9 +1,7 @@
 package estructurasGenerales.propositoEspecifico;
 
 import estructurasGenerales.lineales.Lista;
-import estructurasGenerales.lineales.Pila;
 import estructurasGenerales.lineales.Cola;
-import clases.unidades.Jugador;
 
 public class DiccionarioAVL {
     
@@ -18,313 +16,203 @@ public class DiccionarioAVL {
     //      un elemento con igual clave, agrega el par (clave, dato) a la estructura. Si la operación termina con
     //      éxito devuelve verdadero y falso en caso contrario.
     public boolean insertar(Comparable clave,Object dato){
-        boolean exito = true;
-        
-        //  Si el diccionario esta vacio
+        boolean exito;
         if(this.esVacio()){
-            //  Pone el nuevo elemento en la nueva raiz
-            raiz = new NodoAVLDicc(clave, dato);
+            this.raiz = new NodoAVLDicc(clave, dato);
+            exito = true;
         } else {
-            //  Variable para salir del while
-            boolean salir = false;
-            //  Variable para recorrer la estructura
-            NodoAVLDicc aux = raiz;
-            //  Pila donde se guardaran los nodos para verificar el balance y altura a la vuelta
-            Pila pilaAuxiliar = new Pila();
-            //  En caso de que no este vacio, se ingresa a un while para buscar la posicion adecuada
-            while(!salir){
-                //  Si la clave del nodo actual es igual al que se desea ingresar
-                if(aux.getClave().compareTo(clave) == 0){
-                    //  Da error, las claves deben ser unicas
-                    exito = false;
-                    salir = true;
-                } else {
-                    //  Si es menor el buscado al del nodo actual
-                    if(clave.compareTo(aux.getClave()) < 0){
-                        if(aux.getIzquierdo() != null){
-                            //  Si existe, se apila el nodo y se busca por su hijo izquierdo
-                            pilaAuxiliar.apilar(aux);
-                            aux = aux.getIzquierdo();
-                        } else {
-                            //  Si no existe, se crea un nuevo nodo con la clave y dato como hijo derecho
-                            aux.setIzquierdo(new NodoAVLDicc(clave, dato));
-                            //  Recalcula la altura con el nuevo hijo
-                            aux.recalcularAltura();
-                            salir = true;
-                        }
-                    } else {
-                        if(aux.getDerecho() != null){
-                            //  Si existe, se apila el nodo y se busca por su hijo derecho
-                            pilaAuxiliar.apilar(aux);
-                            aux = aux.getDerecho();
-                        } else {
-                            //  Si no existe, se crea un nuevo nodo con la clave y el dato como hijo derecho
-                            aux.setDerecho(new NodoAVLDicc(clave, dato));
-                            //  Recalcula la altura con el nuevo hijo
-                            aux.recalcularAltura();
-                            salir = true;
-                        }
+            exito = insertarAux(clave, dato, this.raiz);
+            if(exito){
+                this.raiz = verificarBalance(this.raiz);
+            }
+        }
+        return exito;
+    }
+    
+    private boolean insertarAux(Comparable clave, Object dato, NodoAVLDicc nodoActual){
+        
+        boolean exito;
+
+        Comparable claveActual = nodoActual.getClave();
+        if(claveActual.compareTo(clave) == 0){
+            exito = false;
+        } else {
+            if(clave.compareTo(claveActual) < 0){
+                if(nodoActual.getIzquierdo() != null){
+                    exito = insertarAux(clave, dato, nodoActual.getIzquierdo());
+                    if(exito){
+                        nodoActual.setIzquierdo(verificarBalance(nodoActual.getIzquierdo()));
                     }
+                } else {
+                    nodoActual.setIzquierdo(new NodoAVLDicc(clave, dato));
+                    exito = true;
+                }
+            } else {
+                if(nodoActual.getDerecho()!= null){
+                    exito = insertarAux(clave, dato, nodoActual.getDerecho());
+                    if(exito){
+                        nodoActual.setDerecho(verificarBalance(nodoActual.getDerecho()));
+                    }
+                } else {
+                    nodoActual.setDerecho(new NodoAVLDicc(clave, dato));
+                    exito = true;
                 }
             }
             if(exito){
-                NodoAVLDicc padreAux;
-                NodoAVLDicc nuevaRaizSubarbol;
-                while(!pilaAuxiliar.esVacia()){
-                    padreAux = (NodoAVLDicc) pilaAuxiliar.obtenerTope();
-                    pilaAuxiliar.desapilar();
-                    nuevaRaizSubarbol = verificarBalance(aux);
-                    if(nuevaRaizSubarbol != null){
-                        if(nuevaRaizSubarbol.getClave().compareTo(padreAux.getClave()) > 0){
-                            padreAux.setDerecho(nuevaRaizSubarbol);
-                        } else {
-                            padreAux.setIzquierdo(nuevaRaizSubarbol);
-                        }
-                    }
-                    padreAux.recalcularAltura();
-                    aux = padreAux;
-                }
-                
-                nuevaRaizSubarbol = verificarBalance(raiz);
-                if(nuevaRaizSubarbol != null){
-                    raiz = nuevaRaizSubarbol;
-                }
+                nodoActual.recalcularAltura();
             }
         }
         
         return exito;
     }
-    
+   
     //  Elimina el elemento cuya clave sea la recibida por parámetro. Si lo encuentra y la operación de
     //      eliminación termina con éxito devuelve verdadero y falso en caso contrario.
     public boolean eliminar(Comparable clave){
         
-        boolean exito = true;
+        boolean exito;
         
-        //  Si esta vacio, no hay nada que eliminar, se devuelve que no hubo exito
         if(this.esVacio()){
             exito = false;
         } else {
-            //  Si la raiz no tiene la clave que buscamos
-            if(raiz.getClave().compareTo(clave) != 0){
-                //  Llamamos a la funcion privada auxiliar elminarAux
+            if(clave.compareTo(raiz.getClave()) == 0){
+                raiz = eliminarNodo(raiz);
+                raiz = verificarBalance(raiz);
+                exito = true;
+            } else {
                 exito = eliminarAux(clave, raiz);
-                if(exito == true){
-                    NodoAVLDicc nuevaRaiz = verificarBalance(raiz);
-                    if(nuevaRaiz != null){
-                        raiz = nuevaRaiz;
-                    }
+                if(exito){
+                    raiz = verificarBalance(raiz);
                 }
-            } else {
-                //  Si la raiz tiene el elemento que buscamos, se fija que caso es
-                if(raiz.getIzquierdo() != null){
-                    if(raiz.getDerecho() != null){
-                        //  Caso 3, tiene ambos hijos
-                        //  Para este caso existe una funcion privada llamada elminarCaso3
-                        eliminarCaso3(raiz);
-                        NodoAVLDicc nuevaRaiz = verificarBalance(raiz);
-                        if(nuevaRaiz != null)raiz = nuevaRaiz;
-                    } else {
-                        //  Caso 2, tiene un hijo izquierdo nomas
-                        raiz = raiz.getIzquierdo();
-                    }
-                } else {
-                    if(raiz.getDerecho() != null){
-                        //  Caso 2, tiene un hijo derecho nomas
-                        raiz = raiz.getDerecho();
-                    } else {
-                        //  Caso 1, no tiene hijos, arbol de un solo elemento, lo vacía
-                        raiz = null;
-                    }
-                }
-            } 
+            }
         }
         
         return exito;
     }
     
-    //  Funcion privada auxiliar para el metodo eliminar()
-    //  Precondicion: Que el nodo pasado como paramentro no tenga la clave buscado, ni sea nulo
-    private boolean eliminarAux(Comparable clave, NodoAVLDicc nodo){
+    private boolean eliminarAux(Comparable clave, NodoAVLDicc nodoActual){
         
-        boolean exito = true;
+        boolean exito;
         
-        //  Si el valor de la clave que buscamos es menor la clave del nodo por parametro
-        if(clave.compareTo(nodo.getClave()) < 0){
-            //  Significa que debemos buscar por la izquierda
-            NodoAVLDicc aux = nodo.getIzquierdo();
-            //  Si no hay nada a la izquierda, no existe el elemento con la clave en el arbol, se devuelve que no hubo exito
-            if(aux == null){
+        if(clave.compareTo(nodoActual.getClave()) < 0){
+            if(nodoActual.getIzquierdo()== null){
                 exito = false;
             } else {
-                //  Si hay algo a la izquierda, verifica si es la clave buscado
-                if(aux.getClave().compareTo(clave) != 0){
-                    //  De no serlo, busca por izquierda con el mismo metodo recursivo
-                    exito = eliminarAux(clave, aux);
-                    aux.recalcularAltura();
-                    if(exito == true){
-                        NodoAVLDicc nuevaRaizSubarbol = verificarBalance(aux);
-                        if(nuevaRaizSubarbol != null){
-                            nodo.setIzquierdo(nuevaRaizSubarbol);
-                        }
-                        nodo.recalcularAltura();
-                    }
+                if(clave.compareTo(nodoActual.getIzquierdo().getClave()) == 0){
+                    NodoAVLDicc nuevoHijo = eliminarNodo(nodoActual.getIzquierdo());
+                    nodoActual.setIzquierdo(verificarBalance(nuevoHijo));
+                    exito = true;
                 } else {
-                    //  Si lo es, verifica en que caso de eliminacion se encuentra y actua acorde
-                    if(aux.getIzquierdo() != null){
-                        if(aux.getDerecho() != null){
-                            //  Caso 3, tiene ambos hijos, consigue candidato izquierdo, el mayor de los menores
-                            eliminarCaso3(aux);
-                            NodoAVLDicc nuevaRaizSubarbol = verificarBalance(aux);
-                            if(nuevaRaizSubarbol != null){
-                                nodo.setIzquierdo(nuevaRaizSubarbol);
-                            }
-                            nodo.recalcularAltura();
-                        } else {
-                            //  Caso 2, hijo izquierdo
-                            nodo.setIzquierdo(aux.getIzquierdo());
-                            aux.getIzquierdo().recalcularAltura();
-                        }
-                    } else {
-                        if(aux.getDerecho() != null){
-                            //  Caso 2, hijo derecho
-                            nodo.setIzquierdo(aux.getDerecho());
-                            aux.getDerecho().recalcularAltura();
-                        } else {
-                            //  Caso 1, sin hijos
-                            nodo.setIzquierdo(null);
-                        }
+                    exito = eliminarAux(clave, nodoActual.getIzquierdo());
+                    if(exito){
+                        nodoActual.setIzquierdo(verificarBalance(nodoActual.getIzquierdo()));
                     }
                 }
-            } 
+            }
         } else {
-            //  Si no es menor, sabemos que no es mayor (Ya que la precondicion es que no sea igual), usa la misma logica 
-            //      que para revisar por izquierda
-            NodoAVLDicc aux = nodo.getDerecho();
-            if(aux == null){
+            if(nodoActual.getDerecho() == null){
                 exito = false;
             } else {
-                if(aux.getClave().compareTo(clave) != 0){
-                    exito = eliminarAux(clave, aux); 
-                    if(exito == true){
-                        NodoAVLDicc nuevaRaizSubarbol = verificarBalance(aux);
-                        if(nuevaRaizSubarbol != null){
-                            nodo.setDerecho(nuevaRaizSubarbol);
-                        }
-                        nodo.recalcularAltura();
-                    }
+                if(clave.compareTo(nodoActual.getDerecho().getClave()) == 0){
+                    NodoAVLDicc nuevoHijo = eliminarNodo(nodoActual.getDerecho());
+                    nodoActual.setDerecho(verificarBalance(nuevoHijo));
+                    exito = true;
                 } else {
-                    if(aux.getIzquierdo() != null){
-                        if(aux.getDerecho() != null){
-                            //  Caso 3, tiene ambos hijos, consigue candidato izquierdo, el mayor de los menores
-                            eliminarCaso3(aux);
-                            NodoAVLDicc nuevaRaizSubarbol = verificarBalance(aux);
-                            if(nuevaRaizSubarbol != null){
-                                nodo.setDerecho(nuevaRaizSubarbol);
-                            }
-                            nodo.recalcularAltura();
-                        } else {
-                            //  Caso 2, hijo izquierdo
-                            nodo.setDerecho(aux.getIzquierdo());
-                        }
-                    } else {
-                        if(aux.getDerecho() != null){
-                            //  Caso 2, hijo derecho
-                            nodo.setDerecho(aux.getDerecho());
-                        } else {
-                            //  Caso 1, sin hijos
-                            nodo.setDerecho(null);
-                        }
+                    exito = eliminarAux(clave, nodoActual.getDerecho());
+                    if(exito){
+                        nodoActual.setDerecho(verificarBalance(nodoActual.getDerecho()));
                     }
                 }
-            } 
+            }
         }
         
         return exito;
+        
     }
     
-    //  Funcion privada para realizar el algoritmo de eliminacion de caso 3, el caso en el que
-    //      el nodo a ser eliminado tiene hijo izquierdo y derecho.
-    private void eliminarCaso3(NodoAVLDicc nodo){
-        //  Caso 3, tiene ambos hijos, consigue candidato izquierdo, el mayor de los menores
-        NodoAVLDicc aux = nodo.getIzquierdo();
-        //  Si es el primero a la izquierda
-        if(aux.getDerecho() == null){
-            //  Copia su clave y dato
-            nodo.setClave(aux.getClave());
-            nodo.setDato(aux.getDato());
-            //  En caso de tener hijo izquierdo
-            if(aux.getIzquierdo() != null){
-                //  Caso 2, hijo izquierdo
-                nodo.setIzquierdo(aux.getIzquierdo());
-            } else {
-                //  Caso 1, sin hijos
-                nodo.setIzquierdo(null);
-            }
-            nodo.recalcularAltura();
-        } else {
-            Pila pilaAuxiliar = new Pila();
-            //  Si no es el primero a la izquierda, busca el padre del mayor de los menores
-            while(aux.getDerecho().getDerecho() != null){
-                pilaAuxiliar.apilar(aux);
-                aux = aux.getDerecho();
-            }
-            //  Copia la clave y dato del mayor
-            nodo.setClave(aux.getDerecho().getClave());
-            //  En caso de tener hijo izquierdo
-            if(aux.getDerecho().getIzquierdo() != null){
-                //  Caso 2, hijo izquierdo
-                aux.setDerecho(aux.getDerecho().getIzquierdo());
-            } else {
-                //  Caso 1, sin hijos
-                aux.setDerecho(null);
-            }
-            aux.recalcularAltura();
-            NodoAVLDicc padreAuxiliar;
-            NodoAVLDicc nuevaRaizSubarbol;
-            while(!pilaAuxiliar.esVacia()){
-                padreAuxiliar = (NodoAVLDicc) pilaAuxiliar.obtenerTope();
-                nuevaRaizSubarbol = verificarBalance(aux);
-                if(nuevaRaizSubarbol != null){
-                    padreAuxiliar.setDerecho(nuevaRaizSubarbol);
+    private NodoAVLDicc eliminarNodo(NodoAVLDicc nodoObjetivo){
+        
+        NodoAVLDicc nuevoHijo;
+        
+        if(nodoObjetivo.getIzquierdo() != null){
+            if(nodoObjetivo.getDerecho() != null){
+                //  Caso 3
+                nuevoHijo = nodoObjetivo;
+                if(nodoObjetivo.getIzquierdo().getDerecho() == null){
+                    nodoObjetivo.setClave(nodoObjetivo.getIzquierdo().getClave());
+                    nodoObjetivo.setIzquierdo(nodoObjetivo.getIzquierdo().getIzquierdo());
+                } else {
+                    nodoObjetivo.setClave(buscarSucesor(nodoObjetivo.getIzquierdo()));
+                    nodoObjetivo.setIzquierdo(verificarBalance(nodoObjetivo.getIzquierdo()));
                 }
-                padreAuxiliar.recalcularAltura();
-                aux = padreAuxiliar;
-                pilaAuxiliar.desapilar();
+                nodoObjetivo.recalcularAltura();
+            } else {
+                //  Caso 2
+                nuevoHijo = nodoObjetivo.getIzquierdo();
             }
-            nuevaRaizSubarbol = verificarBalance(aux);
-            if(nuevaRaizSubarbol != null){
-                nodo.setDerecho(nuevaRaizSubarbol);
+        } else {
+            if(nodoObjetivo.getDerecho() != null){
+                //  Caso 2
+                nuevoHijo = nodoObjetivo.getDerecho();
+            } else {
+                //  Caso 1
+                nuevoHijo = null;
             }
-            nodo.recalcularAltura();
         }
+        
+        return nuevoHijo;
     }
     
+    //  Busca el nuevo sucesor para el caso 3. Busca el mayor de los menores.
+    private Comparable buscarSucesor(NodoAVLDicc nodoPadre){
+        
+        Comparable sucesor;
+        NodoAVLDicc nodoHijo = nodoPadre.getDerecho();
+        
+        if(nodoHijo.getDerecho() != null){
+            sucesor = buscarSucesor(nodoHijo);
+            nodoPadre.setDerecho(verificarBalance(nodoHijo));
+        } else {
+            sucesor = nodoHijo.getClave();
+            nodoPadre.setDerecho(nodoHijo.getIzquierdo());
+            nodoPadre.recalcularAltura();
+        }
+        
+        return sucesor;
+    }
+    
+    //  Funcion privada que verifica el balance de un nodo y hace los cambios necesarios. Ademas devuelve
+    //      la nueva raiz del sub-arbol
     private NodoAVLDicc verificarBalance(NodoAVLDicc nodo){
         
-        NodoAVLDicc nuevaRaiz = null;
-        int balance = getBalance(nodo);
+        NodoAVLDicc nuevaRaiz = nodo;
         
-        if(balance > 1){
-            //  Nodo desbalanceado a izquierda
-            if(getBalance(nodo.getIzquierdo()) == -1){
-                //  Hijo desbalanceado en sentido contrario, se necesita rotacion a izquierda con hijo
-                //      izquierdo de pivot
-                nodo.setIzquierdo(rotarIzquierda(nodo.getIzquierdo()));
-            }
-            //  Compartan o no sentido de desbalance nodo e hijo, se debe rotar a derecha con nodo de pivot
-            nuevaRaiz = rotarDerecha(nodo);
+        if(nodo == null){
+            nuevaRaiz = null;
         } else {
-            if(balance < -1){
-                //  Nodo desbalanceado a derecha
-                if(getBalance(nodo.getDerecho()) == 1){
-                    //  Hijo desbalanceado en sentido contrario, se necesita rotacion a derecha con
-                    //      hijo derecho como pivot
-                    nodo.setDerecho(rotarDerecha(nodo.getDerecho()));
+            int balance = getBalance(nodo);
+
+            if(balance > 1){
+                //  Nodo desbalanceado a izquierda
+                if(getBalance(nodo.getIzquierdo()) == -1){
+                    //  Hijo desbalanceado en sentido contrario, se necesita rotacion a izquierda con hijo
+                    //      izquierdo de pivot
+                    nodo.setIzquierdo(rotarIzquierda(nodo.getIzquierdo()));
                 }
-                //  Compartan o no sentido de desbalance nodo e hijo, se debe rotar a izquierda con nodo de pivot
-                nuevaRaiz = rotarIzquierda(nodo);
-            }
+                //  Compartan o no sentido de desbalance nodo e hijo, se debe rotar a derecha con nodo de pivot
+                nuevaRaiz = rotarDerecha(nodo);
+            } else {
+                if(balance < -1){
+                    //  Nodo desbalanceado a derecha
+                    if(getBalance(nodo.getDerecho()) == 1){
+                        //  Hijo desbalanceado en sentido contrario, se necesita rotacion a derecha con
+                        //      hijo derecho como pivot
+                        nodo.setDerecho(rotarDerecha(nodo.getDerecho()));
+                    }
+                    //  Compartan o no sentido de desbalance nodo e hijo, se debe rotar a izquierda con nodo de pivot
+                    nuevaRaiz = rotarIzquierda(nodo);
+                }
+            }   
         }
         //  Si no esta desbalanceado, no se hace nada.
         return nuevaRaiz;

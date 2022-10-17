@@ -40,13 +40,7 @@ public class GrafoEtiquetadoIntMod {
     //      deben eliminarse todos los arcos que lo tengan como origen o destino. Si se puede realizar la
     //      eliminación con éxito devuelve verdadero, en caso contrario devuelve falso.
     public boolean eliminarVertice(Object vertice){
-        
-        //  Variable para guardar el exito
-        boolean exito;
-        
-        exito = eliminarVerticeAux(vertice, inicio, null);
-        
-        return exito;
+        return eliminarVerticeAux(vertice, inicio, null);
     }
     
     private boolean eliminarVerticeAux(Object verticeObjetivo, NodoVertInt verticeActual, NodoVertInt verticePadre){
@@ -367,16 +361,14 @@ public class GrafoEtiquetadoIntMod {
     }
        
     //  Funcion privada auxiliar de caminoMasCorto, devuleve el camino mas corto en el parametro resultado
-    private void caminoMasCortoAux(NodoVertInt vertice, Object destino, Lista caminoRecorrido, Lista caminoPosible){
+    private void caminoMasCortoAux(NodoVertInt vertice, Object destino, Lista recorridoActual, Lista caminoPosible){
         
         //  Se agrega al camino recorrido
-        caminoRecorrido.insertar(vertice.getElem(), caminoRecorrido.longitud() + 1);
+        recorridoActual.insertar(vertice.getElem(), recorridoActual.longitud() + 1);
          
         if(vertice.getElem().equals(destino)){
-            caminoPosible.vaciar();
-            for(int i = 1; i <= caminoRecorrido.longitud(); i++){
-                caminoPosible.insertar(caminoRecorrido.recuperar(i), i);
-            }
+            //  caminoPosible se vuelve una copia del recorridoActual
+            recorridoActual.pasarElementos(caminoPosible);
         } else {
             //  Variable para recorrer el arreglo
             NodoAdyInt aux = vertice.getPrimerAdy();
@@ -386,19 +378,19 @@ public class GrafoEtiquetadoIntMod {
                 //  Si todavia no se encontro un camino posible, O si se encontro pero el camino actual es mas corto
                 //      que la longitud del otro - 1 (ya que si al agregar el siguiente vertice queda igual que el camino mas corto
                 //      no sirve)
-                if((caminoPosible.esVacia()) || (caminoRecorrido.longitud() < caminoPosible.longitud() - 1)){
+                if((caminoPosible.esVacia()) || (recorridoActual.longitud() < caminoPosible.longitud() - 1)){
                     //  Nos fijamos si ya fue visitado para evitar bucles
-                    if(caminoRecorrido.localizar(aux.getVertice().getElem()) < 0){
+                    if(recorridoActual.localizar(aux.getVertice().getElem()) < 0){
                         //  Si no esta entre los vertices visitados, entonces se llama
                         //      recursivamente para checkear este posible caminno.
-                        caminoMasCortoAux(aux.getVertice(), destino, caminoRecorrido, caminoPosible);
+                        caminoMasCortoAux(aux.getVertice(), destino, recorridoActual, caminoPosible);
                     } 
                 }
                 aux = aux.getSigAdyacente();
             }
         }
         
-        caminoRecorrido.eliminar(caminoRecorrido.longitud());
+        recorridoActual.eliminar(recorridoActual.longitud());
     }
     
     //  Dados dos elementos de TipoVertice (origen y destino), devuelve un camino 
@@ -425,17 +417,15 @@ public class GrafoEtiquetadoIntMod {
     }
        
     //  Funcion privada auxiliar de caminoMasLargo, devuleve el camino mas largo en el parametro resultado
-    private void caminoMasLargoAux(NodoVertInt vertice, Object destino, Lista caminoRecorrido, Lista caminoPosible){
+    private void caminoMasLargoAux(NodoVertInt vertice, Object destino, Lista recorridoActual, Lista caminoPosible){
         
         //  Se agrega al camino recorrido
-        caminoRecorrido.insertar(vertice.getElem(), caminoRecorrido.longitud() + 1);
+        recorridoActual.insertar(vertice.getElem(), recorridoActual.longitud() + 1);
 
         if(vertice.getElem().equals(destino)){
-            if(caminoRecorrido.longitud() > caminoPosible.longitud()){
-                caminoPosible.vaciar();
-                for(int i = 1; i <= caminoRecorrido.longitud(); i++){
-                    caminoPosible.insertar(caminoRecorrido.recuperar(i), i);
-                }
+            if(recorridoActual.longitud() > caminoPosible.longitud()){
+                //  caminoPosible se vuelve una copia del recorridoActual
+                recorridoActual.pasarElementos(caminoPosible);
             }
         } else {
             //  Variable para recorrer el arreglo
@@ -444,16 +434,16 @@ public class GrafoEtiquetadoIntMod {
             //  Mientras no se hayan recorrido todos los adyacentes
             while(aux!=null){
                 //  Nos fijamos si ya fue visitado para evitar bucles
-                if(caminoRecorrido.localizar(aux.getVertice().getElem()) < 0){
+                if(recorridoActual.localizar(aux.getVertice().getElem()) < 0){
                     //  Si no esta entre los vertices visitados, entonces se llama
                     //      recursivamente para checkear este posible caminno.
-                    caminoMasLargoAux(aux.getVertice(), destino, caminoRecorrido, caminoPosible);
+                    caminoMasLargoAux(aux.getVertice(), destino, recorridoActual, caminoPosible);
                 }
                 aux = aux.getSigAdyacente();
             }
         }
         
-        caminoRecorrido.eliminar(caminoRecorrido.longitud());
+        recorridoActual.eliminar(recorridoActual.longitud());
     }
   
     //  Devuelve una lista con los vértices del grafo visitados según el recorrido 
@@ -685,10 +675,8 @@ public class GrafoEtiquetadoIntMod {
         
         if(menorDistancia.get() < 0 || distanciaActual < menorDistancia.get()){
             if(vertice.getElem().equals(destino)){
-                caminoPosible.vaciar();
-                for(int i = 1; i <= recorridoActual.longitud(); i++){
-                    caminoPosible.insertar(recorridoActual.recuperar(i), i);
-                }
+                //  caminoPosible se vuelve una copia del recorridoActual
+                recorridoActual.pasarElementos(caminoPosible);
                 menorDistancia.set(distanciaActual);
             } else {
                 NodoAdyInt aux = vertice.getPrimerAdy();

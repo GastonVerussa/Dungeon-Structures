@@ -447,10 +447,9 @@ public class MapeoAMuchosAVL {
         
         //  Si el nodo existe
         if(nodo != null){
-            //  Llena la lista en Inorden
-            resultado = toStringAux(nodo.getIzquierdo());
+            //  Llena la lista en Preorden
             
-            //  Luego agrego el elemento al String
+            //  Agrego el elemento al String
             resultado += "\n" + nodo.getDominio().toString() + ": { ";
 
             Lista rango = nodo.getRango();
@@ -461,6 +460,9 @@ public class MapeoAMuchosAVL {
             //  Saca el ultimo ", "
             resultado = resultado.substring(0, resultado.length() - 2);
             resultado += " }";
+            
+            //  Luego agrego a los hijos
+            resultado = toStringAux(nodo.getIzquierdo());
             
             resultado += toStringAux(nodo.getDerecho());
         } 
